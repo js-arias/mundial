@@ -211,19 +211,19 @@ func groupD() (*team, *team) {
 func groupE() (*team, *team) {
 	if !allGames {
 		teams["srb"].points = 3
-		teams["srb"].goals = 1
+		teams["srb"].goals = 0
 		teams["bra"].points = 4
 		teams["bra"].goals = 2
-		teams["che"].points = 1
-		teams["che"].goals = 0
+		teams["che"].points = 4
+		teams["che"].goals = 1
 		teams["cri"].points = 0
 		teams["cri"].goals = -3
 	} else {
 		match(teams["cri"], teams["srb"])
 		match(teams["bra"], teams["che"])
 		match(teams["bra"], teams["cri"])
+		match(teams["srb"], teams["che"])
 	}
-	match(teams["srb"], teams["che"])
 	match(teams["srb"], teams["bra"])
 	match(teams["che"], teams["cri"])
 
