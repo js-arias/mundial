@@ -184,17 +184,17 @@ func groupD() (*team, *team) {
 		teams["hrv"].points = 6
 		teams["hrv"].goals = 5
 		teams["isl"].points = 1
-		teams["isl"].goals = 0
+		teams["isl"].goals = -2
 		teams["arg"].points = 1
 		teams["arg"].goals = -3
-		teams["nga"].points = 0
-		teams["nga"].goals = -2
+		teams["nga"].points = 3
+		teams["nga"].goals = 0
 	} else {
 		match(teams["arg"], teams["isl"])
 		match(teams["hrv"], teams["nga"])
 		match(teams["arg"], teams["hrv"])
+		match(teams["nga"], teams["isl"])
 	}
-	match(teams["nga"], teams["isl"])
 	match(teams["nga"], teams["arg"])
 	match(teams["isl"], teams["hrv"])
 
