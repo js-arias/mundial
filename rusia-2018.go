@@ -94,21 +94,21 @@ var allGames = false
 func groupA() (*team, *team) {
 	if !allGames {
 		teams["rus"].points = 6
-		teams["rus"].goals = 7
-		teams["uru"].points = 6
-		teams["uru"].goals = 2
+		teams["rus"].goals = 4
+		teams["uru"].points = 9
+		teams["uru"].goals = 5
 		teams["egy"].points = 0
-		teams["egy"].goals = -3
-		teams["sau"].points = 0
-		teams["sau"].goals = -6
+		teams["egy"].goals = -4
+		teams["sau"].points = 3
+		teams["sau"].goals = -5
 	} else {
 		match(teams["rus"], teams["sau"])
 		match(teams["uru"], teams["egy"])
 		match(teams["rus"], teams["egy"])
 		match(teams["uru"], teams["sau"])
+		match(teams["uru"], teams["rus"])
+		match(teams["sau"], teams["egy"])
 	}
-	match(teams["uru"], teams["rus"])
-	match(teams["sau"], teams["egy"])
 
 	gv := []*team{
 		teams["rus"],
@@ -122,23 +122,22 @@ func groupA() (*team, *team) {
 
 func groupB() (*team, *team) {
 	if !allGames {
-		teams["esp"].points = 4
-		teams["esp"].goals = 1
-		teams["prt"].points = 4
+		teams["esp"].points = 5
+		teams["esp"].goals = 2 // to make spain the leader
+		teams["prt"].points = 5
 		teams["prt"].goals = 1
-		teams["irn"].points = 3
+		teams["irn"].points = 4
 		teams["irn"].goals = 0
-		teams["mar"].points = 0
+		teams["mar"].points = 1
 		teams["mar"].goals = -2
 	} else {
 		match(teams["esp"], teams["prt"])
 		match(teams["irn"], teams["mar"])
 		match(teams["prt"], teams["mar"])
 		match(teams["esp"], teams["irn"])
+		match(teams["irn"], teams["prt"])
+		match(teams["esp"], teams["mar"])
 	}
-
-	match(teams["irn"], teams["prt"])
-	match(teams["esp"], teams["mar"])
 
 	gv := []*team{
 		teams["esp"],
