@@ -151,22 +151,22 @@ func groupB() (*team, *team) {
 
 func groupC() (*team, *team) {
 	if !allGames {
-		teams["fra"].points = 6
+		teams["fra"].points = 7
 		teams["fra"].goals = 2
-		teams["dnk"].points = 4
+		teams["dnk"].points = 5
 		teams["dnk"].goals = 1
 		teams["aus"].points = 1
-		teams["aus"].goals = -1
-		teams["per"].points = 0
-		teams["per"].goals = -2
+		teams["aus"].goals = -3
+		teams["per"].points = 3
+		teams["per"].goals = 0
 	} else {
 		match(teams["fra"], teams["aus"])
 		match(teams["dnk"], teams["per"])
 		match(teams["dnk"], teams["aus"])
 		match(teams["fra"], teams["per"])
+		match(teams["dnk"], teams["fra"])
+		match(teams["aus"], teams["per"])
 	}
-	match(teams["dnk"], teams["fra"])
-	match(teams["aus"], teams["per"])
 
 	gv := []*team{
 		teams["fra"],
