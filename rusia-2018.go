@@ -210,21 +210,21 @@ func groupD() (*team, *team) {
 func groupE() (*team, *team) {
 	if !allGames {
 		teams["srb"].points = 3
-		teams["srb"].goals = 0
-		teams["bra"].points = 4
-		teams["bra"].goals = 2
-		teams["che"].points = 4
+		teams["srb"].goals = -2
+		teams["bra"].points = 7
+		teams["bra"].goals = 4
+		teams["che"].points = 5
 		teams["che"].goals = 1
-		teams["cri"].points = 0
+		teams["cri"].points = 1
 		teams["cri"].goals = -3
 	} else {
 		match(teams["cri"], teams["srb"])
 		match(teams["bra"], teams["che"])
 		match(teams["bra"], teams["cri"])
 		match(teams["srb"], teams["che"])
+		match(teams["srb"], teams["bra"])
+		match(teams["che"], teams["cri"])
 	}
-	match(teams["srb"], teams["bra"])
-	match(teams["che"], teams["cri"])
 
 	gv := []*team{
 		teams["bra"],
@@ -238,23 +238,22 @@ func groupE() (*team, *team) {
 
 func groupF() (*team, *team) {
 	if !allGames {
-		teams["swe"].points = 3
-		teams["swe"].goals = 1
-		teams["mex"].points = 3
-		teams["mex"].goals = 1
-		teams["deu"].points = 0
-		teams["deu"].goals = -1
-		teams["kor"].points = 0
-		teams["kor"].goals = -1
+		teams["swe"].points = 6
+		teams["swe"].goals = 3
+		teams["mex"].points = 6
+		teams["mex"].goals = -1
+		teams["deu"].points = 3
+		teams["deu"].goals = -2
+		teams["kor"].points = 3
+		teams["kor"].goals = 0
 	} else {
 		match(teams["deu"], teams["mex"])
 		match(teams["swe"], teams["kor"])
+		match(teams["kor"], teams["mex"])
+		match(teams["deu"], teams["swe"])
+		match(teams["kor"], teams["deu"])
+		match(teams["mex"], teams["swe"])
 	}
-	match(teams["kor"], teams["mex"])
-	match(teams["deu"], teams["swe"])
-	match(teams["kor"], teams["deu"])
-	match(teams["mex"], teams["swe"])
-
 	gv := []*team{
 		teams["deu"],
 		teams["swe"],
@@ -267,22 +266,22 @@ func groupF() (*team, *team) {
 
 func groupG() (*team, *team) {
 	if !allGames {
-		teams["bel"].points = 3
-		teams["bel"].goals = 3
-		teams["eng"].points = 3
-		teams["eng"].goals = 1
+		teams["bel"].points = 9
+		teams["bel"].goals = 7
+		teams["eng"].points = 6
+		teams["eng"].goals = 5
 		teams["tun"].points = 3
-		teams["tun"].goals = 1
+		teams["tun"].goals = -3
 		teams["pan"].points = 0
-		teams["pan"].goals = -3
+		teams["pan"].goals = -9
 	} else {
 		match(teams["bel"], teams["pan"])
 		match(teams["eng"], teams["tun"])
+		match(teams["bel"], teams["tun"])
+		match(teams["eng"], teams["pan"])
+		match(teams["eng"], teams["bel"])
+		match(teams["pan"], teams["tun"])
 	}
-	match(teams["bel"], teams["tun"])
-	match(teams["eng"], teams["pan"])
-	match(teams["eng"], teams["bel"])
-	match(teams["pan"], teams["tun"])
 
 	gv := []*team{
 		teams["eng"],
@@ -296,22 +295,22 @@ func groupG() (*team, *team) {
 
 func groupH() (*team, *team) {
 	if !allGames {
-		teams["jpn"].points = 3
-		teams["jpn"].goals = 1
-		teams["sen"].points = 3
-		teams["sen"].goals = 1
-		teams["pol"].points = 0
-		teams["pol"].goals = -1
-		teams["col"].points = 0
-		teams["col"].goals = -1
+		teams["jpn"].points = 4
+		teams["jpn"].goals = 1 // to classify japan
+		teams["sen"].points = 4
+		teams["sen"].goals = 0
+		teams["pol"].points = 3
+		teams["pol"].goals = -3
+		teams["col"].points = 6
+		teams["col"].goals = 3
 	} else {
 		match(teams["col"], teams["jpn"])
 		match(teams["pol"], teams["sen"])
+		match(teams["jpn"], teams["sen"])
+		match(teams["pol"], teams["col"])
+		match(teams["jpn"], teams["pol"])
+		match(teams["sen"], teams["col"])
 	}
-	match(teams["jpn"], teams["sen"])
-	match(teams["pol"], teams["col"])
-	match(teams["jpn"], teams["pol"])
-	match(teams["sen"], teams["col"])
 
 	gv := []*team{
 		teams["col"],
