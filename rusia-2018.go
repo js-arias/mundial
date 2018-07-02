@@ -404,26 +404,29 @@ func main() {
 
 		// round of 16
 		var m49, m50, m51, m52 *team
+		var m53, m54 *team
 		if !allGames {
 			m49 = teams["uru"]
 			m50 = teams["fra"]
 			m51 = teams["rus"]
 			m52 = teams["hrv"]
+			m53 = teams["bra"]
+			m54 = teams["bel"]
 		} else {
 			m49 = eliminator(a1, b2)
 			m50 = eliminator(c1, d2)
 			m51 = eliminator(b1, a2)
 			m52 = eliminator(d1, c2)
+			m53 = eliminator(e1, f2)
+			m54 = eliminator(g1, h2)
 		}
 		champ[m49.name].r16++
 		champ[m50.name].r16++
 		champ[m51.name].r16++
 		champ[m52.name].r16++
-
-		m53 := eliminator(e1, f2)
 		champ[m53.name].r16++
-		m54 := eliminator(g1, h2)
 		champ[m54.name].r16++
+
 		m55 := eliminator(f1, e2)
 		champ[m55.name].r16++
 		m56 := eliminator(h1, g2)
