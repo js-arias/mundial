@@ -413,6 +413,7 @@ func main() {
 			m53 = teams["bra"]
 			m54 = teams["bel"]
 			m55 = teams["swe"]
+			m56 = teams["eng"]
 		} else {
 			m49 = eliminator(a1, b2)
 			m50 = eliminator(c1, d2)
@@ -421,6 +422,7 @@ func main() {
 			m53 = eliminator(e1, f2)
 			m54 = eliminator(g1, h2)
 			m55 = eliminator(f1, e2)
+			m56 = eliminator(h1, g2)
 		}
 		champ[m49.name].r16++
 		champ[m50.name].r16++
@@ -429,8 +431,6 @@ func main() {
 		champ[m53.name].r16++
 		champ[m54.name].r16++
 		champ[m55.name].r16++
-
-		m56 = eliminator(h1, g2)
 		champ[m56.name].r16++
 
 		// qfinals
