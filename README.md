@@ -83,6 +83,8 @@ Equipo fuerte | Equipo débil | Expectativa de victoria
 2.4 | 0.2 | 0.922
 2.5 | 0.1 | 0.944
 
+El código de esa simulación esta en el directorio `prob`.
+
 Para el caso de la fase de eliminación directa,
 en caso de empate se simulo el tiempo extra usando estos mismos valores,
 pero escalados a 1/3
@@ -105,6 +107,22 @@ usando el procedimiento para
 [calcular el número de puntos cambiados](https://en.wikipedia.org/wiki/World_Football_Elo_Ratings#Calculation_principles).
 Dado que es la copa del mundo,
 el factor de peso del partido fue de 60.
+
+## Ejecutar la simulación
+
+Para ejecutar la simulación se necesita `go`
+usando la instrucción
+(se puede compilar como una aplicación,
+pero dado el uso poco seguido,
+no vale la pena!):
+
+~~~bash
+go run catar-2022.go
+~~~~
+
+Con el parámetro `--sims` es posible indicar el número de simulaciones,
+y con `--fmt` se puede indicar que produzca una tabla en `markdown`
+usando `md`.
 
 ## Interpretación
 
