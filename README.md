@@ -46,6 +46,9 @@ Arabia Saudita | 1635 | 1624 | 0 | 8 | 23 | 67 | 8 | 0 | 0 | 0 | 0 | 1.8-6.3
 Camerún | 1610 | 1601 | 0 | 2 | 13 | 84 | 2 | 0 | 0 | 0 | 0 | 1.0-6.9
 Ghana | 1567 | 1556 | 0 | 2 | 15 | 81 | 2 | 0 | 0 | 0 | 0 | 1.0-6.8
 
+En el archivo `resultados.md` están los próximos partidos
+así como los resultados más recientes.
+
 ## Funcionamiento del modelo
 
 El modelo esta basado en los indices de ELO
