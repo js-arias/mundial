@@ -124,6 +124,31 @@ Con el parámetro `--sims` es posible indicar el número de simulaciones,
 y con `--fmt` se puede indicar que produzca una tabla en `markdown`
 usando `md`.
 
+También es posible ejecutar la simulación de un solo partido
+usando el código en `partido`.
+Por ejemplo para simular Argentina vs. Brasil:
+
+~~~bash
+go run partido.go "Argentina" "Brasil"
+~~~
+
+Es posible estimar la probabilidad sabiendo el marcador
+en un minuto determinado
+(los minutos de cuentan hacía adelante desde 0 hasta 90,
+o si hay tiempos suplementarios hasta 120):
+
+~~~bash
+go run partido.go -min 69 "Bélgica" "Brasil" "1-2"
+~~~
+
+Con la bandera `--sup` los empates se resuelven
+con tiempo suplementario.
+
+Como esta aplicación puede ser muy interesante
+para ejecutar en un partido,
+un código muy similar esta en el
+[playground de go](https://go.dev/play/p/hEBq_4m3TuA).
+
 ## Interpretación
 
 En el mundial pasado mucha gente bromeo
