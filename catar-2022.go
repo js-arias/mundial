@@ -312,13 +312,24 @@ func resultadosGrupo(pos []*grupoPos) {
 
 func grupoA() (a1, a2 string) {
 	pos := []*grupoPos{
-		{nombre: "Catar", suerte: rand.Float64()},
-		{nombre: "Ecuador", suerte: rand.Float64()},
+		{
+			nombre: "Catar",
+			menos:  2,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Ecuador",
+			puntos: 3,
+			mas:    2,
+			suerte: rand.Float64(),
+		},
 		{nombre: "Senegal", suerte: rand.Float64()},
 		{nombre: "Países Bajos", suerte: rand.Float64()},
 	}
+	elo["Catar"] = 1642 + 100
+	elo["Ecuador"] = 1871
 
-	partidoDeGrupo(pos[0], pos[1]) // Catar vs Ecuador
+	// partidoDeGrupo(pos[0], pos[1]) // Catar vs Ecuador
 	partidoDeGrupo(pos[2], pos[3]) // Senegal vs Países Bajos
 	partidoDeGrupo(pos[0], pos[2]) // Catar vs Senegal
 	partidoDeGrupo(pos[1], pos[3]) // Ecuador vs Países Bajos
