@@ -33,26 +33,26 @@ var elo = map[string]int{
 	"Brasil":         2169,
 	"Canadá":         1776,
 	"Camerún":        1610,
-	"Catar":          1680 + 100, // extra por ser local
+	"Catar":          1642 + 100, // extra por ser local
 	"Costa Rica":     1743,
 	"Corea del Sur":  1786,
 	"Croacia":        1927,
 	"Dinamarca":      1971,
-	"Ecuador":        1833,
+	"Ecuador":        1871,
 	"España":         2048,
-	"Estados Unidos": 1798,
+	"Estados Unidos": 1797,
 	"Francia":        2005,
-	"Gales":          1790,
+	"Gales":          1791,
 	"Ghana":          1567,
-	"Inglaterra":     1920,
-	"Irán":           1797,
+	"Inglaterra":     1957,
+	"Irán":           1760,
 	"Japón":          1787,
 	"Marruecos":      1766,
 	"México":         1809,
-	"Países Bajos":   2040,
+	"Países Bajos":   2050,
 	"Polonia":        1814,
 	"Portugal":       2006,
-	"Senegal":        1687,
+	"Senegal":        1677,
 	"Serbia":         1898,
 	"Suiza":          1902,
 	"Túnez":          1707,
@@ -148,10 +148,12 @@ func main() {
 	var tiempoSup bool
 	var minuto int
 	var simulaciones int
+	var veroRes string
 	flag.BoolVar(&eloFlag, "elo", false, "usa los valor de elo indicados")
 	flag.BoolVar(&tiempoSup, "sup", false, "usa tiempo suplementario para resolver empates")
 	flag.IntVar(&minuto, "min", 0, "tiempo de juego")
 	flag.IntVar(&simulaciones, "sims", 1_000_000, "simulaciones")
+	flag.StringVar(&veroRes, "vero", "", "verosimilitud de un resultado")
 	flag.Parse()
 
 	args := flag.Args()
@@ -217,6 +219,23 @@ func main() {
 		}
 	}
 
+	var v1, v2 int
+	if veroRes != "" {
+		var err error
+		vs := strings.Split(veroRes, "-")
+		if len(vs) != 2 {
+			fmt.Fprintf(os.Stderr, "formato de marcador no reconocido: %q", args[2])
+		}
+		v1, err = strconv.Atoi(vs[0])
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "error al leer marcador %q: %v", args[2], err)
+		}
+		v2, err = strconv.Atoi(vs[1])
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "error al leer marcador %q: %v", args[2], err)
+		}
+	}
+
 	var v, e int
 	var mas, menos int
 
@@ -240,6 +259,13 @@ func main() {
 			}
 		}
 
+		if veroRes != "" {
+			if g1 == v1 && g2 == v2 {
+				v++
+			}
+			continue
+		}
+
 		if g1 > g2 {
 			v++
 		}
@@ -251,6 +277,11 @@ func main() {
 	}
 
 	sims := float64(simulaciones)
+	if veroRes != "" {
+		vero := float64(v) / sims
+		fmt.Printf("%s - %s: verosimilitud del resultado %q: %.6f log: %.6f\n", args[0], args[1], veroRes, vero, math.Log(vero))
+		return
+	}
 
 	fmt.Printf("%s:\n\tvictorias = %.1f %%\n", args[0], float64(v*100)/sims)
 	fmt.Printf("\tempates   = %.1f %%\n", float64(e*100)/sims)

@@ -323,14 +323,25 @@ func grupoA() (a1, a2 string) {
 			mas:    2,
 			suerte: rand.Float64(),
 		},
-		{nombre: "Senegal", suerte: rand.Float64()},
-		{nombre: "Países Bajos", suerte: rand.Float64()},
+		{
+			nombre: "Senegal",
+			menos:  2,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Países Bajos",
+			puntos: 3,
+			mas:    2,
+			suerte: rand.Float64(),
+		},
 	}
 	elo["Catar"] = 1642 + 100
 	elo["Ecuador"] = 1871
+	elo["Países Bajos"] = 2050
+	elo["Senegal"] = 1677
 
 	// partidoDeGrupo(pos[0], pos[1]) // Catar vs Ecuador
-	partidoDeGrupo(pos[2], pos[3]) // Senegal vs Países Bajos
+	// partidoDeGrupo(pos[2], pos[3]) // Senegal vs Países Bajos
 	partidoDeGrupo(pos[0], pos[2]) // Catar vs Senegal
 	partidoDeGrupo(pos[1], pos[3]) // Ecuador vs Países Bajos
 	partidoDeGrupo(pos[0], pos[3]) // Catar vs Países Bajos
@@ -344,14 +355,41 @@ func grupoA() (a1, a2 string) {
 
 func grupoB() (b1, b2 string) {
 	pos := []*grupoPos{
-		{nombre: "Inglaterra", suerte: rand.Float64()},
-		{nombre: "Irán", suerte: rand.Float64()},
-		{nombre: "Estados Unidos", suerte: rand.Float64()},
-		{nombre: "Gales", suerte: rand.Float64()},
+		{
+			nombre: "Inglaterra",
+			puntos: 3,
+			mas:    6,
+			menos:  2,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Irán",
+			mas:    2,
+			menos:  6,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Estados Unidos",
+			puntos: 1,
+			mas:    1,
+			menos:  1,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Gales",
+			puntos: 1,
+			mas:    1,
+			menos:  1,
+			suerte: rand.Float64(),
+		},
 	}
+	elo["Inglaterra"] = 1957
+	elo["Irán"] = 1760
+	elo["Estados Unidos"] = 1797
+	elo["Gales"] = 1791
 
-	partidoDeGrupo(pos[0], pos[1]) // Inglaterra vs Irán
-	partidoDeGrupo(pos[2], pos[3]) // Estados Unidos vs Gales
+	// partidoDeGrupo(pos[0], pos[1]) // Inglaterra vs Irán
+	// partidoDeGrupo(pos[2], pos[3]) // Estados Unidos vs Gales
 	partidoDeGrupo(pos[1], pos[3]) // Irán vs Gales
 	partidoDeGrupo(pos[0], pos[2]) // Inglaterra vs Estados Unidos
 	partidoDeGrupo(pos[0], pos[3]) // Inglaterra vs Gales
