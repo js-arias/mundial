@@ -26,9 +26,9 @@ func init() {
 // ELO. Fuente: <https://www.eloratings.net/2022_World_Cup>.
 var elo = map[string]int{
 	"Alemania":       1963,
-	"Arabia Saudita": 1635,
-	"Argentina":      2143,
-	"Australia":      1719,
+	"Arabia Saudita": 1692,
+	"Argentina":      2086,
+	"Australia":      1702,
 	"Bélgica":        2007,
 	"Brasil":         2169,
 	"Canadá":         1776,
@@ -37,11 +37,11 @@ var elo = map[string]int{
 	"Costa Rica":     1743,
 	"Corea del Sur":  1786,
 	"Croacia":        1927,
-	"Dinamarca":      1971,
+	"Dinamarca":      1952,
 	"Ecuador":        1871,
 	"España":         2048,
 	"Estados Unidos": 1797,
-	"Francia":        2005,
+	"Francia":        2022,
 	"Gales":          1791,
 	"Ghana":          1567,
 	"Inglaterra":     1957,
@@ -55,7 +55,7 @@ var elo = map[string]int{
 	"Senegal":        1677,
 	"Serbia":         1898,
 	"Suiza":          1902,
-	"Túnez":          1707,
+	"Túnez":          1726,
 	"Uruguay":        1936,
 }
 
