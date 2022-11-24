@@ -2,28 +2,6 @@
 
 ## Próximos partidos
 
-### 23 de noviembre
-
-Equipo    | simG | prob |
---------- | ---  | ---- |
-Marruecos |  0.8 |  16% |
-Croacia   |  1.8 |  61% |
-
-Equipo   | simG | prob |
--------- | ---  | ---- |
-Alemania |  1.9 |  66% |
-Japón    |  0.7 |  13% |
-
-Equipo     | simG | prob |
----------- | ---  | ---- |
-España     |  2.2 |  79% |
-Costa Rica |  0.4 |   5% |
-
-Equipo  | simG | prob |
-------- | ---  | ---- |
-Bélgica |  2.0 |  71% |
-Canadá  |  0.6 |  10% |
-
 ### 24 de noviembre
 
 Equipo  | simG | prob |
@@ -46,7 +24,51 @@ Equipo | simG | prob |
 Brasil |  2.1 |  75% |
 Serbia |  0.5 |   8% |
 
+### 25 de noviembre
+
+Equipo | simG | prob |
+-----  | ---  | ---- |
+Gales  |  1.4 |  42% |
+Irán   |  1.2 |  32% |
+
+Equipo  | simG | prob |
+------- | ---  | ---- |
+Catar   |  1.5 |  46% |
+Senegal |  1.1 |  28% |
+
+Equipo       | simG | prob |
+------------ | ---  | ---- |
+Países Bajos |  1.9 |  66% |
+Ecuador      |  0.7 |  13% |
+
+Equipo         | simG | prob |
+-------------- | ---  | ---- |
+Inglaterra     |  1.8 |  61% |
+Estados Unidos |  0.8 |  16% |
+
 ## Resultados
+
+### 23 de noviembre
+
+Equipo    | G  | simG | prob | lnVero |
+--------- | -- | ---  | ---- | ------ |
+Marruecos |  0 |  0.8 |  16% |        |
+Croacia   |  0 |  1.8 |  61% |  -2.60 |
+
+Equipo   | G  | simG | prob | lnVero |
+-------- | -- | ---  | ---- | ------ |
+Alemania |  1 |  1.9 |  66% |        |
+Japón    |  2 |  0.7 |  13% |  -3.37 |
+
+Equipo     | G  | simG | prob | lnVero |
+---------- | -- | ---  | ---- | ------ |
+España     |  7 |  2.2 |  79% |        |
+Costa Rica |  0 |  0.4 |   5% |  -5.56 |
+
+Equipo  | G  | simG | prob | lnVero |
+------- | -- | ---  | ---- | ------ |
+Bélgica |  1 |  2.0 |  71% |        |
+Canadá  |  0 |  0.6 |  10% |  -1.91 |
 
 ### 22 de noviembre
 

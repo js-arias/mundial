@@ -493,14 +493,39 @@ func grupoD() (d1, d2 string) {
 
 func grupoE() (e1, e2 string) {
 	pos := []*grupoPos{
-		{nombre: "España", suerte: rand.Float64()},
-		{nombre: "Costa Rica", suerte: rand.Float64()},
-		{nombre: "Alemania", suerte: rand.Float64()},
-		{nombre: "Japón", suerte: rand.Float64()},
+		{
+			nombre: "España",
+			puntos: 3,
+			mas:    7,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Costa Rica",
+			menos:  7,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Alemania",
+			mas:    1,
+			menos:  2,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Japón",
+			puntos: 3,
+			mas:    2,
+			menos:  1,
+			suerte: rand.Float64(),
+		},
 	}
 
-	partidoDeGrupo(pos[2], pos[3]) // Alemania vs Japón
-	partidoDeGrupo(pos[0], pos[1]) // España vs Costa Rica
+	elo["España"] = 2068
+	elo["Costa Rica"] = 1723
+	elo["Alemania"] = 1919
+	elo["Japón"] = 1831
+
+	// partidoDeGrupo(pos[2], pos[3]) // Alemania vs Japón
+	// partidoDeGrupo(pos[0], pos[1]) // España vs Costa Rica
 	partidoDeGrupo(pos[1], pos[3]) // Costa Rica vs Japón
 	partidoDeGrupo(pos[0], pos[2]) // España vs Alemania
 	partidoDeGrupo(pos[0], pos[3]) // España vs Japón
@@ -514,14 +539,36 @@ func grupoE() (e1, e2 string) {
 
 func grupoF() (f1, f2 string) {
 	pos := []*grupoPos{
-		{nombre: "Bélgica", suerte: rand.Float64()},
-		{nombre: "Canadá", suerte: rand.Float64()},
-		{nombre: "Marruecos", suerte: rand.Float64()},
-		{nombre: "Croacia", suerte: rand.Float64()},
+		{
+			nombre: "Bélgica",
+			puntos: 3,
+			mas:    1,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Canadá",
+			menos:  1,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Marruecos",
+			puntos: 1,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Croacia",
+			puntos: 1,
+			suerte: rand.Float64(),
+		},
 	}
 
-	partidoDeGrupo(pos[2], pos[3]) // Marruecos vs Croacia
-	partidoDeGrupo(pos[0], pos[1]) // Bélgica vs Canadá
+	elo["Bélgica"] = 2020
+	elo["Canadá"] = 1763
+	elo["Marruecos"] = 1779
+	elo["Croacia"] = 1914
+
+	// partidoDeGrupo(pos[2], pos[3]) // Marruecos vs Croacia
+	// partidoDeGrupo(pos[0], pos[1]) // Bélgica vs Canadá
 	partidoDeGrupo(pos[0], pos[2]) // Bélgica vs Marruecos
 	partidoDeGrupo(pos[1], pos[3]) // Canadá vs Croacia
 	partidoDeGrupo(pos[0], pos[3]) // Bélgica vs Croacia
