@@ -146,11 +146,13 @@ func extra(e1, e2, min int) (g1, g2 int) {
 func main() {
 	var eloFlag bool
 	var tiempoSup bool
+	var frecFlag bool
 	var minuto int
 	var simulaciones int
 	var veroRes string
 	flag.BoolVar(&eloFlag, "elo", false, "usa los valor de elo indicados")
 	flag.BoolVar(&tiempoSup, "sup", false, "usa tiempo suplementario para resolver empates")
+	flag.BoolVar(&frecFlag, "frec", false, "imprime la frecuencia de los resultados")
 	flag.IntVar(&minuto, "min", 0, "tiempo de juego")
 	flag.IntVar(&simulaciones, "sims", 1_000_000, "simulaciones")
 	flag.StringVar(&veroRes, "vero", "", "verosimilitud de un resultado")
@@ -236,6 +238,7 @@ func main() {
 		}
 	}
 
+	frecs := make(map[string]float64)
 	var v, e int
 	var mas, menos int
 
@@ -274,6 +277,9 @@ func main() {
 		}
 		mas += g1
 		menos += g2
+
+		marcador := fmt.Sprintf("%d-%d", g1, g2)
+		frecs[marcador]++
 	}
 
 	sims := float64(simulaciones)
@@ -287,4 +293,28 @@ func main() {
 	fmt.Printf("\tempates   = %.1f %%\n", float64(e*100)/sims)
 	fmt.Printf("\tderrotas  = %.1f %%\n", (1-float64(v+e)/sims)*100)
 	fmt.Printf("\tgoles     = %.1f-%.1f\n", float64(mas)/sims, float64(menos)/sims)
+
+	if !frecFlag {
+		return
+	}
+	marcadores := make([]string, 0, len(frecs))
+	for m := range frecs {
+		marcadores = append(marcadores, m)
+	}
+
+	slices.SortFunc(marcadores, func(a, b string) bool {
+		if frecs[a] != frecs[b] {
+			return frecs[a] > frecs[b]
+		}
+		return a < b
+	})
+	var sum float64
+	for _, m := range marcadores {
+		f := frecs[m] / sims
+		fmt.Printf("%s\t%.1f %%\n", m, f*100)
+		sum += f
+		if sum > 0.95 {
+			break
+		}
+	}
 }
