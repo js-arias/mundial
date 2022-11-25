@@ -582,14 +582,36 @@ func grupoF() (f1, f2 string) {
 
 func grupoG() (g1, g2 string) {
 	pos := []*grupoPos{
-		{nombre: "Brasil", suerte: rand.Float64()},
-		{nombre: "Serbia", suerte: rand.Float64()},
-		{nombre: "Suiza", suerte: rand.Float64()},
-		{nombre: "Camerún", suerte: rand.Float64()},
+		{
+			nombre: "Brasil",
+			puntos: 3,
+			mas:    2,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Serbia",
+			menos:  2,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Suiza",
+			puntos: 3,
+			mas:    1,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Camerún",
+			menos:  1,
+			suerte: rand.Float64(),
+		},
 	}
+	elo["Brasil"] = 2185
+	elo["Serbia"] = 1882
+	elo["Suiza"] = 1911
+	elo["Camerún"] = 1601
 
-	partidoDeGrupo(pos[2], pos[3]) // Suiza vs Camerún
-	partidoDeGrupo(pos[0], pos[1]) // Brasil vs Serbia
+	// partidoDeGrupo(pos[2], pos[3]) // Suiza vs Camerún
+	// partidoDeGrupo(pos[0], pos[1]) // Brasil vs Serbia
 	partidoDeGrupo(pos[1], pos[3]) // Camerún vs Serbia
 	partidoDeGrupo(pos[0], pos[2]) // Brasil vs Suiza
 	partidoDeGrupo(pos[0], pos[3]) // Brasil vs Camerún
@@ -603,14 +625,37 @@ func grupoG() (g1, g2 string) {
 
 func grupoH() (g1, g2 string) {
 	pos := []*grupoPos{
-		{nombre: "Portugal", suerte: rand.Float64()},
-		{nombre: "Ghana", suerte: rand.Float64()},
-		{nombre: "Uruguay", suerte: rand.Float64()},
-		{nombre: "Corea del Sur", suerte: rand.Float64()},
+		{
+			nombre: "Portugal",
+			puntos: 3,
+			mas:    3,
+			menos:  2,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Ghana",
+			mas:    2,
+			menos:  3,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Uruguay",
+			puntos: 1,
+			suerte: rand.Float64(),
+		},
+		{
+			nombre: "Corea del Sur",
+			puntos: 1,
+			suerte: rand.Float64(),
+		},
 	}
+	elo["Portugal"] = 2010
+	elo["Ghana"] = 1463
+	elo["Uruguay"] = 1924
+	elo["Corea del Sur"] = 1798
 
-	partidoDeGrupo(pos[2], pos[3]) // Uruguay vs Corea del Sur
-	partidoDeGrupo(pos[0], pos[1]) // Portugal vs Ghana
+	// partidoDeGrupo(pos[2], pos[3]) // Uruguay vs Corea del Sur
+	// partidoDeGrupo(pos[0], pos[1]) // Portugal vs Ghana
 	partidoDeGrupo(pos[1], pos[3]) // Ghana vs Corea del Sur
 	partidoDeGrupo(pos[0], pos[2]) // Portugal vs Uruguay
 	partidoDeGrupo(pos[0], pos[3]) // Portugal vs Corea del Sur
