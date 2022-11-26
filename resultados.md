@@ -2,28 +2,6 @@
 
 ## Próximos partidos
 
-### 26 de noviembre
-
-Equipo    | simG | prob |
---------- | ---  | ---- |
-Túnez     |  1.4 |  42% |
-Australia |  1.2 |  32% |
-
-Equipo         | simG | prob |
--------------- | ---  | ---- |
-Polonia        |  1.7 |  56% |
-Arabia Saudita |  0.9 |  20% |
-
-Equipo    | simG | prob |
---------- | ---  | ---- |
-Francia   |  1.6 |  51% |
-Dinamarca |  1.0 |  24% |
-
-Equipo    | simG | prob |
---------- | ---  | ---- |
-Argentina |  2.1 |  75% |
-México    |  0.5 |   8% |
-
 ### 27 de noviembre
 
 Equipo     | simG | prob |
@@ -46,7 +24,51 @@ Equipo   | simG | prob |
 España   |  1.8 |  61% |
 Alemania |  0.8 |  16% |
 
+### 28 de noviembre
+
+Equipo  | simG | prob |
+------- | ---  | ---- |
+Camerún |  0.5 |   8% |
+Serbia  |  2.1 |  75% |
+
+Equipo        | simG | prob |
+------------- | ---  | ---- |
+Corea del Sur |  2.0 |  71% |
+Ghana         |  0.6 |  10% |
+
+Equipo | simG | prob |
+------ | ---  | ---- |
+Brasil |  2.1 |  75% |
+Suiza  |  0.5 |   8% |
+
+Equipo   | simG | prob |
+-------- | ---  | ---- |
+Portugal |  1.6 |  51% |
+Uruguay  |  1.0 |  23% |
+
 ## Resultados
+
+### 26 de noviembre
+
+Equipo    | G  | simG | prob | lnVero |
+--------- | -- | ---  | ---- | ------ |
+Túnez     |  0 |  1.4 |  42% |        |
+Australia |  1 |  1.2 |  32% |  -2.42 |
+
+Equipo         | G  | simG | prob | lnVero |
+-------------- | -- | ---  | ---- | ------ |
+Polonia        |  2 |  1.7 |  56% |        |
+Arabia Saudita |  0 |  0.9 |  20% |  -2.23 |
+
+Equipo    | G  | simG | prob | lnVero |
+--------- | -- | ---  | ---- | ------ |
+Francia   |  2 |  1.6 |  51% |        |
+Dinamarca |  1 |  1.0 |  24% |  -2.35 |
+
+Equipo    | G  | simG | prob | lnVero |
+--------- | -- | ---  | ---- | ------ |
+Argentina |  2 |  2.1 |  75% |        |
+México    |  0 |  0.5 |   8% |  -1.80 |
 
 ### 25 de noviembre
 

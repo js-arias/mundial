@@ -411,7 +411,8 @@ func grupoC() (c1, c2 string) {
 	pos := []*grupoPos{
 		{
 			nombre: "Argentina",
-			mas:    1,
+			puntos: 3,
+			mas:    1 + 2,
 			menos:  2,
 			suerte: rand.Float64(),
 		},
@@ -419,29 +420,31 @@ func grupoC() (c1, c2 string) {
 			nombre: "Arabia Saudita",
 			puntos: 3,
 			mas:    2,
-			menos:  1,
+			menos:  1 + 2,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "México",
 			puntos: 1,
+			menos:  2,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Polonia",
-			puntos: 1,
+			puntos: 1 + 3,
+			mas:    2,
 			suerte: rand.Float64(),
 		},
 	}
-	elo["Argentina"] = 2086
-	elo["Arabia Saudita"] = 1692
-	elo["México"] = 1809
-	elo["Polonia"] = 1814
+	elo["Argentina"] = 2101
+	elo["Arabia Saudita"] = 1662
+	elo["México"] = 1794
+	elo["Polonia"] = 1844
 
 	// partidoDeGrupo(pos[0], pos[1]) // Argentina vs Arabia Saudita
 	// partidoDeGrupo(pos[2], pos[3]) // México vs Polonia
-	partidoDeGrupo(pos[1], pos[3]) // Arabia Saudita vs Polonia
-	partidoDeGrupo(pos[0], pos[2]) // Argentina vs México
+	// partidoDeGrupo(pos[1], pos[3]) // Arabia Saudita vs Polonia
+	// partidoDeGrupo(pos[0], pos[2]) // Argentina vs México
 	partidoDeGrupo(pos[0], pos[3]) // Argentina vs Polonia
 	partidoDeGrupo(pos[1], pos[2]) // Arabia Saudita vs México
 
@@ -455,39 +458,41 @@ func grupoD() (d1, d2 string) {
 	pos := []*grupoPos{
 		{
 			nombre: "Francia",
-			puntos: 3,
-			mas:    4,
-			menos:  1,
+			puntos: 3 + 3,
+			mas:    4 + 2,
+			menos:  1 + 1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Australia",
-			mas:    1,
+			puntos: 3,
+			mas:    1 + 1,
 			menos:  4,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Dinamarca",
 			puntos: 1,
+			mas:    1,
+			menos:  2,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Túnez",
-			puntos: 0,
-			mas:    0,
-			menos:  0,
+			puntos: 1,
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 	}
-	elo["Francia"] = 2022
-	elo["Australia"] = 1702
-	elo["Dinamarca"] = 1952
-	elo["Túnez"] = 1726
+	elo["Francia"] = 2046
+	elo["Australia"] = 1734
+	elo["Dinamarca"] = 1928
+	elo["Túnez"] = 1694
 
 	// partidoDeGrupo(pos[2], pos[3]) // Dinamarca vs Túnez
 	// partidoDeGrupo(pos[0], pos[1]) // Francia vs Australia
-	partidoDeGrupo(pos[1], pos[3]) // Australia vs Túnez
-	partidoDeGrupo(pos[0], pos[2]) // Francia vs Dinamarca
+	// partidoDeGrupo(pos[1], pos[3]) // Australia vs Túnez
+	// partidoDeGrupo(pos[0], pos[2]) // Francia vs Dinamarca
 	partidoDeGrupo(pos[0], pos[3]) // Túnez vs Francia
 	partidoDeGrupo(pos[1], pos[2]) // Australia vs Dinamarca
 
