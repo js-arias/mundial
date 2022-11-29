@@ -2,28 +2,6 @@
 
 ## Próximos partidos
 
-### 28 de noviembre
-
-Equipo  | simG | prob |
-------- | ---  | ---- |
-Camerún |  0.5 |   8% |
-Serbia  |  2.1 |  75% |
-
-Equipo        | simG | prob |
-------------- | ---  | ---- |
-Corea del Sur |  2.0 |  71% |
-Ghana         |  0.6 |  10% |
-
-Equipo | simG | prob |
------- | ---  | ---- |
-Brasil |  2.1 |  75% |
-Suiza  |  0.5 |   8% |
-
-Equipo   | simG | prob |
--------- | ---  | ---- |
-Portugal |  1.6 |  51% |
-Uruguay  |  1.0 |  23% |
-
 ### 29 de noviembre
 
 Equipo       | simG | prob |
@@ -46,7 +24,51 @@ Equipo     | simG | prob |
 Gales      |  0.7 |  13% |
 Inglaterra |  1.9 |  66% |
 
+### 30 de noviembre
+
+Equipo    | simG | prob |
+--------- | ---  | ---- |
+Australia |  0.7 |  13% |
+Dinamarca |  1.9 |  66% |
+
+Equipo  | simG | prob |
+------- | ---  | ---- |
+Túnez   |  0.3 |   4% |
+Francia |  2.3 |  83% |
+
+Equipo    | simG | prob |
+--------- | ---  | ---- |
+Polonia   |  0.5 |   8% |
+Argentina |  2.1 |  75% |
+
+Equipo         | simG | prob |
+-------------- | ---  | ---- |
+Arabia Saudita |  0.9 |  20% |
+México         |  1.7 |  56% |
+
 ## Resultados
+
+### 28 de noviembre
+
+Equipo  | G  | simG | prob | lnVero |
+------- | -- | ---  | ---- | ------ |
+Camerún |  3 |  0.5 |   8% |        |
+Serbia  |  3 |  2.1 |  75% |  -6.01 |
+
+Equipo        | G  | simG | prob | lnVero |
+------------- | -- | ---  | ---- | ------ |
+Corea del Sur |  2 |  2.0 |  71% |        |
+Ghana         |  3 |  0.6 |  10% |  -5.24 |
+
+Equipo | G  | simG | prob | lnVero |
+------ | -- | ---  | ---- | ------ |
+Brasil |  1 |  2.1 |  75% |        |
+Suiza  |  0 |  0.5 |   8% |  -1.85 |
+
+Equipo   | G  | simG | prob | lnVero |
+-------- | -- | ---  | ---- | ------ |
+Portugal |  2 |  1.6 |  51% |        |
+Uruguay  |  0 |  1.0 |  23% |  -2.35 |
 
 ### 27 de noviembre
 
