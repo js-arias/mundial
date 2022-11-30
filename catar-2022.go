@@ -315,42 +315,42 @@ func grupoA() (a1, a2 string) {
 		{
 			nombre: "Catar",
 			mas:    1,
-			menos:  2 + 3,
+			menos:  2 + 3 + 2,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Ecuador",
 			puntos: 3 + 1,
-			mas:    2 + 1,
-			menos:  1,
+			mas:    2 + 1 + 1,
+			menos:  1 + 2,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Senegal",
-			puntos: 3,
-			mas:    3,
-			menos:  2 + 1,
+			puntos: 3 + 3,
+			mas:    3 + 2,
+			menos:  2 + 1 + 1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Países Bajos",
-			puntos: 3 + 1,
-			mas:    2 + 1,
+			puntos: 3 + 1 + 3,
+			mas:    2 + 1 + 2,
 			menos:  1,
 			suerte: rand.Float64(),
 		},
 	}
-	elo["Catar"] = 1589 + 100
-	elo["Ecuador"] = 1885
-	elo["Países Bajos"] = 2036
-	elo["Senegal"] = 1730
+	elo["Catar"] = 1578 + 100
+	elo["Ecuador"] = 1842
+	elo["Países Bajos"] = 2047
+	elo["Senegal"] = 1773
 
 	// partidoDeGrupo(pos[0], pos[1]) // Catar vs Ecuador
 	// partidoDeGrupo(pos[2], pos[3]) // Senegal vs Países Bajos
 	// partidoDeGrupo(pos[0], pos[2]) // Catar vs Senegal
 	// partidoDeGrupo(pos[1], pos[3]) // Ecuador vs Países Bajos
-	partidoDeGrupo(pos[0], pos[3]) // Catar vs Países Bajos
-	partidoDeGrupo(pos[1], pos[2]) // Ecuador vs Senegal
+	// partidoDeGrupo(pos[0], pos[3]) // Catar vs Países Bajos
+	// partidoDeGrupo(pos[1], pos[2]) // Ecuador vs Senegal
 
 	ordenarGrupo(pos)
 	resultadosGrupo(pos)
@@ -362,8 +362,8 @@ func grupoB() (b1, b2 string) {
 	pos := []*grupoPos{
 		{
 			nombre: "Inglaterra",
-			puntos: 3 + 1,
-			mas:    6,
+			puntos: 3 + 1 + 3,
+			mas:    6 + 3,
 			menos:  2,
 			suerte: rand.Float64(),
 		},
@@ -371,13 +371,13 @@ func grupoB() (b1, b2 string) {
 			nombre: "Irán",
 			puntos: 3,
 			mas:    2 + 2,
-			menos:  6,
+			menos:  6 + 1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Estados Unidos",
-			puntos: 1 + 1,
-			mas:    1,
+			puntos: 1 + 1 + 3,
+			mas:    1 + 1,
 			menos:  1,
 			suerte: rand.Float64(),
 		},
@@ -385,21 +385,21 @@ func grupoB() (b1, b2 string) {
 			nombre: "Gales",
 			puntos: 1,
 			mas:    1,
-			menos:  1 + 2,
+			menos:  1 + 2 + 3,
 			suerte: rand.Float64(),
 		},
 	}
-	elo["Inglaterra"] = 1944
-	elo["Irán"] = 1809
-	elo["Estados Unidos"] = 1810
-	elo["Gales"] = 1742
+	elo["Inglaterra"] = 1969
+	elo["Irán"] = 1779
+	elo["Estados Unidos"] = 1840
+	elo["Gales"] = 1717
 
 	// partidoDeGrupo(pos[0], pos[1]) // Inglaterra vs Irán
 	// partidoDeGrupo(pos[2], pos[3]) // Estados Unidos vs Gales
 	// partidoDeGrupo(pos[1], pos[3]) // Irán vs Gales
 	// partidoDeGrupo(pos[0], pos[2]) // Inglaterra vs Estados Unidos
-	partidoDeGrupo(pos[0], pos[3]) // Inglaterra vs Gales
-	partidoDeGrupo(pos[1], pos[2]) // Irán vs Estados Unidos
+	// partidoDeGrupo(pos[0], pos[3]) // Inglaterra vs Gales
+	// partidoDeGrupo(pos[1], pos[2]) // Irán vs Estados Unidos
 
 	ordenarGrupo(pos)
 	resultadosGrupo(pos)

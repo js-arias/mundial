@@ -2,28 +2,6 @@
 
 ## Próximos partidos
 
-### 29 de noviembre
-
-Equipo       | simG | prob |
------------- | ---  | ---- |
-Países Bajos |  2.3 |  83% |
-Catar        |  0.3 |   4% |
-
-Equipo  | simG | prob |
-------- | ---  | ---- |
-Ecuador |  1.8 |  61% |
-Senegal |  0.8 |  16% |
-
-Equipo         | simG | prob |
--------------- | ---  | ---- |
-Irán           |  1.2 |  32% |
-Estados Unidos |  1.4 |  42% |
-
-Equipo     | simG | prob |
----------- | ---  | ---- |
-Gales      |  0.7 |  13% |
-Inglaterra |  1.9 |  66% |
-
 ### 30 de noviembre
 
 Equipo    | simG | prob |
@@ -46,7 +24,73 @@ Equipo         | simG | prob |
 Arabia Saudita |  0.9 |  20% |
 México         |  1.7 |  56% |
 
+### 1 de diciembre
+
+Equipo    | simG | prob |
+--------- | ---  | ---- |
+Canadá    |  0.9 |  20% |
+Marruecos |  1.7 |  56% |
+
+Equipo  | simG | prob |
+------- | ---  | ---- |
+Croacia |  1.2 |  32% |
+Bélgica |  1.4 |  42% |
+
+Equipo     | simG | prob |
+---------- | ---  | ---- |
+Costa Rica |  0.7 |  13% |
+Alemania   |  1.9 |  66% |
+
+Equipo | simG | prob |
+------ | ---  | ---- |
+Japón  |  0.5 |   8% |
+España |  2.1 |  75% |
+
+### 2 de diciembre
+
+Equipo  | simG | prob |
+------- | ---  | ---- |
+Ghana   |  0.5 |   8% |
+Uruguay |  2.1 |  75% |
+
+Equipo        | simG | prob |
+------------- | ---  | ---- |
+Corea del Sur |  0.5 |   8% |
+Portugal      |  2.1 |  75% |
+
+Equipo  | simG | prob |
+------- | ---  | ---- |
+Camerún |  0.1 |   1% |
+Brasil  |  2.5 |  90% |
+
+Equipo | simG | prob |
+------ | ---  | ---- |
+Serbia |  1.1 |  28% |
+Suiza  |  1.5 |  46% |
+
 ## Resultados
+
+### 29 de noviembre
+
+Equipo       | G  | simG | prob | lnVero |
+------------ | -- | ---  | ---- | ------ |
+Países Bajos |  2 |  2.3 |  83% |        |
+Catar        |  0 |  0.3 |   4% |  -1.62 |
+
+Equipo  | G  | simG | prob | lnVero |
+------- | -- | ---  | ---- | ------ |
+Ecuador |  1 |  1.8 |  61% |        |
+Senegal |  2 |  0.8 |  16% |  -3.14 |
+
+Equipo         | G  | simG | prob | lnVero |
+-------------- | -- | ---  | ---- | ------ |
+Irán           |  0 |  1.2 |  32% |        |
+Estados Unidos |  1 |  1.4 |  42% |  -2.26 |
+
+Equipo     | G  | simG | prob | lnVero |
+---------- | -- | ---  | ---- | ------ |
+Gales      |  0 |  0.7 |  13% |        |
+Inglaterra |  3 |  1.9 |  66% |  -2.47 |
 
 ### 28 de noviembre
 
