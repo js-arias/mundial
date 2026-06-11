@@ -10,53 +10,63 @@ import (
 	"fmt"
 	"math"
 	"os"
+	"slices"
 	"strconv"
 	"strings"
-	"time"
 
-	"golang.org/x/exp/rand"
-	"golang.org/x/exp/slices"
 	"gonum.org/v1/gonum/stat/distuv"
 )
 
-func init() {
-	rand.Seed(uint64(time.Now().UnixNano()))
-}
-
-// ELO. Fuente: <https://www.eloratings.net/2022_World_Cup>.
+// ELO. Fuente: <https://www.eloratings.net/2026_World_Cup>.
 var elo = map[string]int{
-	"Alemania":       1931,
-	"Arabia Saudita": 1662,
-	"Argentina":      2101,
-	"Australia":      1734,
-	"Bélgica":        1948,
-	"Brasil":         2195,
-	"Canadá":         1732,
-	"Camerún":        1621,
-	"Catar":          1578 + 100, // extra por ser local
-	"Costa Rica":     1750,
-	"Corea del Sur":  1798,
-	"Croacia":        1945,
-	"Dinamarca":      1928,
-	"Ecuador":        1842,
-	"España":         2056,
-	"Estados Unidos": 1840,
-	"Francia":        2046,
-	"Gales":          1717,
-	"Ghana":          1611,
-	"Inglaterra":     1969,
-	"Irán":           1779,
-	"Japón":          1792,
-	"Marruecos":      1851,
-	"México":         1794,
-	"Países Bajos":   2047,
-	"Polonia":        1844,
-	"Portugal":       2044,
-	"Senegal":        1773,
-	"Serbia":         1862,
-	"Suiza":          1901,
-	"Túnez":          1694,
-	"Uruguay":        1890,
+	"Algeria":                1772,
+	"Argentina":              2115,
+	"Australia":              1777,
+	"Austria":                1830,
+	"Belgium":                1894,
+	"Bosnia and Herzegovina": 1595,
+	"Brazil":                 1991,
+	"Canada":                 1788,
+	"Cape Verde":             1578,
+	"Colombia":               1982,
+	"Croatia":                1912,
+	"Curazao":                1434,
+	"Czech Republic":         1740,
+	"DR Congo":               1652,
+	"Ecuador":                1938,
+	"Egypt":                  1696,
+	"England":                2024,
+	"France":                 2063,
+	"Germany":                1932,
+	"Ghana":                  1510,
+	"Haiti":                  1548,
+	"Iran":                   1772,
+	"Iraq":                   1607,
+	"Ivory Coast":            1695,
+	"Japan":                  1906,
+	"Jordan":                 1680,
+	"Mexico":                 1875,
+	"Morocco":                1827,
+	"Netherlands":            1948,
+	"New Zealand":            1562,
+	"Norway":                 1914,
+	"Panama":                 1730,
+	"Paraguay":               1834,
+	"Portugal":               1989,
+	"Qatar":                  1421,
+	"Saudi Arabia":           1576,
+	"Scotland":               1782,
+	"Senegal":                1860,
+	"South Africa":           1517,
+	"South Korea":            1758,
+	"Spain":                  2157,
+	"Sweden":                 1712,
+	"Switzerland":            1891,
+	"Tunisia":                1628,
+	"Turkey":                 1911,
+	"United States":          1726,
+	"Uruguay":                1892,
+	"Uzbekistan":             1714,
 }
 
 // Probabilidad de victoria
@@ -302,11 +312,17 @@ func main() {
 		marcadores = append(marcadores, m)
 	}
 
-	slices.SortFunc(marcadores, func(a, b string) bool {
+	slices.SortFunc(marcadores, func(a, b string) int {
 		if frecs[a] != frecs[b] {
-			return frecs[a] > frecs[b]
+			if frecs[a] > frecs[b] {
+				return -1
+			}
+			return 1
 		}
-		return a < b
+		if a < b {
+			return -1
+		}
+		return 1
 	})
 	var sum float64
 	for _, m := range marcadores {

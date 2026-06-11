@@ -12,15 +12,9 @@ import (
 	"flag"
 	"fmt"
 	"math"
-	"time"
 
-	"golang.org/x/exp/rand"
 	"gonum.org/v1/gonum/stat/distuv"
 )
-
-func init() {
-	rand.Seed(uint64(time.Now().UnixNano()))
-}
 
 var promedioGol float64
 var simulaciones int

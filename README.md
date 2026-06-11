@@ -5,50 +5,62 @@ ELO indica el ELO al arrancar el campeonato,
 y ELO final el ELO esperado al terminar.
 P1, P2, P3 y P4 indican la probabilidad
 de terminar en esa posición en la fase de grupos.
-Oct, Ct, Sf y Fin indican la probabilidad de alcanzar
-la fase de octavos, cuarto, semifinal y final respectivamente.
+F16, Oct, Ct, Sf y Fin indican la probabilidad de alcanzar
+la fase de dieciseisavos, octavos, cuarto, semifinal y final respectivamente.
 Camp indica la probabilidad de quedar campeón.
 Goles indica el estimado de goles a favor y en contra.
 Los valores de las probabilidades están en porcentaje.
 
-Equipo | ELO | ELO final | P1 | P2 | P3 | P4 | Ocv | Ct | Sf | Fin | Camp | Goles
------- | --- | --------- | -- | -- | -- | -- | --- | -- | -- | --- | ---- | -----
-Brasil | 2169 | 2211 | 99 | 0 | 0 | 0 | 100 | 91 | 69 | 48 | 36 | 10.2-3.9
-Argentina | 2143 | 2113 | 74 | 13 | 12 | 0 | 87 | 68 | 46 | 22 | 14 | 8.6-5.3
-Francia | 2005 | 2058 | 99 | 0 | 0 | 0 | 100 | 79 | 55 | 31 | 11 | 12.6-5.5
-Portugal | 2006 | 2056 | 99 | 0 | 0 | 0 | 100 | 71 | 48 | 28 | 10 | 10.9-5.7
-Países Bajos | 2040 | 2052 | 100 | 0 | 0 | 0 | 100 | 83 | 41 | 14 | 8 | 9.0-3.7
-España | 2048 | 2062 | 90 | 8 | 1 | 0 | 98 | 73 | 25 | 13 | 7 | 13.3-4.2
-Inglaterra | 1920 | 1970 | 100 | 0 | 0 | 0 | 100 | 79 | 31 | 13 | 3 | 12.6-4.6
-Croacia | 1927 | 1939 | 40 | 25 | 34 | 0 | 65 | 32 | 12 | 5 | 1 | 6.9-3.9
-Alemania | 1963 | 1935 | 0 | 59 | 5 | 34 | 59 | 31 | 12 | 5 | 1 | 5.4-5.3
-Bélgica | 2007 | 1950 | 18 | 23 | 54 | 3 | 41 | 20 | 7 | 3 | 1 | 3.5-4.2
-Suiza | 1902 | 1901 | 0 | 71 | 27 | 0 | 72 | 20 | 10 | 3 | 0 | 4.4-3.2
-Dinamarca | 1971 | 1928 | 0 | 65 | 29 | 4 | 65 | 22 | 8 | 2 | 0 | 4.5-3.9
-Marruecos | 1766 | 1849 | 41 | 51 | 7 | 0 | 92 | 29 | 6 | 2 | 0 | 5.7-2.6
-Uruguay | 1936 | 1887 | 0 | 72 | 18 | 9 | 72 | 7 | 2 | 0 | 0 | 3.9-2.9
-Serbia | 1898 | 1855 | 0 | 27 | 44 | 28 | 27 | 7 | 3 | 1 | 0 | 4.8-6.9
-Polonia | 1814 | 1835 | 21 | 37 | 41 | 0 | 58 | 17 | 5 | 1 | 0 | 3.9-3.0
-Estados Unidos | 1798 | 1831 | 0 | 100 | 0 | 0 | 100 | 16 | 4 | 0 | 0 | 4.3-2.1
-Senegal | 1687 | 1765 | 0 | 100 | 0 | 0 | 100 | 20 | 3 | 0 | 0 | 7.2-5.3
-México | 1809 | 1794 | 0 | 26 | 29 | 43 | 26 | 4 | 1 | 0 | 0 | 2.4-3.2
-Costa Rica | 1743 | 1754 | 2 | 26 | 5 | 65 | 28 | 7 | 1 | 0 | 0 | 2.3-9.3
-Japón | 1787 | 1786 | 7 | 4 | 87 | 0 | 12 | 4 | 0 | 0 | 0 | 2.7-4.4
-Australia | 1719 | 1728 | 0 | 33 | 64 | 2 | 33 | 4 | 0 | 0 | 0 | 3.6-6.1
-Arabia Saudita | 1635 | 1657 | 3 | 23 | 16 | 56 | 27 | 2 | 0 | 0 | 0 | 3.5-4.9
-Corea del Sur | 1786 | 1745 | 0 | 2 | 10 | 86 | 2 | 0 | 0 | 0 | 0 | 2.5-5.2
-Ghana | 1567 | 1607 | 0 | 24 | 71 | 4 | 24 | 0 | 0 | 0 | 0 | 6.2-7.1
-Túnez | 1707 | 1690 | 0 | 0 | 5 | 93 | 0 | 0 | 0 | 0 | 0 | 0.3-3.3
-Camerún | 1610 | 1621 | 0 | 0 | 28 | 71 | 0 | 0 | 0 | 0 | 0 | 3.1-6.5
-Ecuador | 1833 | 1842 | 0 | 0 | 100 | 0 | 0 | 0 | 0 | 0 | 0 | 4.0-3.0
-Irán | 1797 | 1779 | 0 | 0 | 100 | 0 | 0 | 0 | 0 | 0 | 0 | 4.0-7.0
-Canadá | 1776 | 1728 | 0 | 0 | 3 | 96 | 0 | 0 | 0 | 0 | 0 | 1.9-6.7
-Gales | 1790 | 1717 | 0 | 0 | 0 | 100 | 0 | 0 | 0 | 0 | 0 | 1.0-6.0
-Catar | 1780 | 1678 | 0 | 0 | 0 | 100 | 0 | 0 | 0 | 0 | 0 | 1.0-7.0
-
-En el archivo [resultados.md](resultados.md)
-están los próximos partidos
-así como los resultados más recientes.
+Equipo | ELO | ELO final | P1 | P2 | P3 | P4 | F16 | Ocv | Ct | Sf | Fin | Camp | Goles
+------ | --- | --------- | -- | -- | -- | -- | --- | --- | -- | -- | --- | ---- | -----
+Spain | 2157 | 2173 | 84 | 14 | 0 | 0 | 99 | 82 | 67 | 55 | 40 | 26 | 12.6-4.8
+Argentina | 2115 | 2135 | 85 | 11 | 1 | 0 | 99 | 76 | 65 | 48 | 33 | 19 | 12.7-4.1
+France | 2063 | 2080 | 66 | 24 | 8 | 0 | 98 | 82 | 58 | 41 | 21 | 12 | 10.9-5.4
+England | 2024 | 2039 | 67 | 26 | 5 | 0 | 99 | 78 | 53 | 33 | 16 | 7 | 10.3-5.3
+Portugal | 1989 | 2002 | 51 | 38 | 8 | 1 | 96 | 71 | 42 | 20 | 11 | 4 | 9.4-5.1
+Brazil | 1991 | 2005 | 68 | 22 | 7 | 0 | 98 | 64 | 42 | 23 | 10 | 4 | 10.1-4.4
+Colombia | 1982 | 1990 | 44 | 43 | 10 | 2 | 96 | 68 | 37 | 18 | 9 | 4 | 9.0-5.2
+Netherlands | 1948 | 1961 | 56 | 31 | 9 | 2 | 96 | 57 | 39 | 17 | 7 | 2 | 8.9-5.0
+Ecuador | 1938 | 1943 | 48 | 39 | 11 | 0 | 97 | 62 | 26 | 14 | 5 | 2 | 9.0-4.5
+Germany | 1932 | 1936 | 46 | 41 | 11 | 0 | 97 | 60 | 25 | 13 | 5 | 1 | 8.9-4.6
+Turkey | 1911 | 1926 | 52 | 27 | 13 | 5 | 91 | 65 | 34 | 11 | 4 | 1 | 9.1-4.5
+Norway | 1914 | 1916 | 20 | 42 | 31 | 5 | 87 | 50 | 24 | 11 | 4 | 1 | 7.2-5.6
+Croatia | 1912 | 1914 | 27 | 52 | 17 | 1 | 94 | 51 | 22 | 10 | 4 | 1 | 7.8-5.1
+Japan | 1906 | 1910 | 36 | 43 | 15 | 4 | 92 | 45 | 27 | 11 | 3 | 1 | 7.8-5.0
+Belgium | 1894 | 1905 | 63 | 25 | 9 | 2 | 96 | 65 | 31 | 8 | 3 | 1 | 9.3-4.2
+Switzerland | 1891 | 1900 | 64 | 29 | 5 | 0 | 98 | 50 | 26 | 8 | 3 | 1 | 9.5-4.1
+Mexico | 1875 | 1885 | 59 | 26 | 11 | 2 | 96 | 47 | 24 | 9 | 2 | 0 | 8.8-4.5
+Uruguay | 1892 | 1892 | 14 | 71 | 11 | 2 | 94 | 27 | 15 | 6 | 2 | 0 | 7.6-4.3
+Senegal | 1860 | 1857 | 12 | 30 | 46 | 10 | 77 | 35 | 14 | 5 | 1 | 0 | 6.0-5.6
+Paraguay | 1834 | 1837 | 26 | 32 | 25 | 15 | 77 | 44 | 16 | 4 | 1 | 0 | 6.8-5.1
+Morocco | 1827 | 1827 | 19 | 42 | 31 | 7 | 85 | 29 | 14 | 4 | 1 | 0 | 6.6-5.0
+Austria | 1830 | 1830 | 8 | 46 | 30 | 14 | 75 | 17 | 7 | 2 | 0 | 0 | 5.7-4.9
+Canada | 1788 | 1790 | 30 | 51 | 15 | 2 | 94 | 22 | 12 | 2 | 0 | 0 | 7.5-4.8
+Australia | 1777 | 1769 | 13 | 23 | 32 | 30 | 59 | 27 | 7 | 1 | 0 | 0 | 5.1-5.5
+Iran | 1772 | 1774 | 24 | 40 | 26 | 8 | 84 | 35 | 9 | 1 | 0 | 0 | 6.8-4.7
+Scotland | 1782 | 1775 | 11 | 31 | 44 | 12 | 75 | 20 | 8 | 2 | 0 | 0 | 5.6-5.2
+South Korea | 1758 | 1757 | 22 | 36 | 31 | 9 | 83 | 18 | 9 | 2 | 0 | 0 | 6.3-5.2
+Algeria | 1772 | 1767 | 4 | 30 | 40 | 25 | 59 | 10 | 3 | 1 | 0 | 0 | 4.5-5.4
+Czech Republic | 1740 | 1735 | 17 | 31 | 38 | 12 | 78 | 15 | 7 | 1 | 0 | 0 | 5.8-5.3
+United States | 1726 | 1713 | 7 | 16 | 28 | 47 | 42 | 15 | 3 | 0 | 0 | 0 | 3.8-5.8
+Panama | 1730 | 1723 | 4 | 19 | 60 | 15 | 65 | 15 | 3 | 0 | 0 | 0 | 4.7-5.5
+Sweden | 1712 | 1704 | 5 | 17 | 46 | 30 | 53 | 10 | 3 | 0 | 0 | 0 | 4.1-5.6
+Egypt | 1696 | 1690 | 11 | 26 | 41 | 20 | 66 | 18 | 3 | 0 | 0 | 0 | 5.2-5.1
+Uzbekistan | 1714 | 1706 | 2 | 12 | 48 | 36 | 43 | 10 | 2 | 0 | 0 | 0 | 3.4-6.0
+Ivory Coast | 1695 | 1688 | 5 | 17 | 63 | 13 | 67 | 13 | 2 | 0 | 0 | 0 | 4.6-5.5
+Jordan | 1680 | 1667 | 1 | 11 | 27 | 59 | 27 | 3 | 0 | 0 | 0 | 0 | 2.6-6.1
+DR Congo | 1652 | 1640 | 1 | 6 | 33 | 59 | 23 | 4 | 0 | 0 | 0 | 0 | 2.2-6.4
+Tunisia | 1628 | 1615 | 1 | 7 | 27 | 63 | 24 | 3 | 0 | 0 | 0 | 0 | 2.4-6.2
+Bosnia and Herzegovina | 1595 | 1588 | 3 | 17 | 58 | 20 | 59 | 4 | 1 | 0 | 0 | 0 | 4.3-5.4
+New Zealand | 1562 | 1547 | 1 | 7 | 22 | 68 | 21 | 2 | 0 | 0 | 0 | 0 | 2.3-6.2
+Cape Verde | 1578 | 1573 | 0 | 7 | 45 | 47 | 29 | 2 | 0 | 0 | 0 | 0 | 2.5-6.2
+Iraq | 1607 | 1596 | 0 | 2 | 13 | 83 | 9 | 1 | 0 | 0 | 0 | 0 | 1.3-6.8
+Saudi Arabia | 1576 | 1571 | 0 | 7 | 42 | 50 | 28 | 2 | 0 | 0 | 0 | 0 | 2.5-6.2
+Haiti | 1548 | 1537 | 0 | 3 | 16 | 79 | 11 | 1 | 0 | 0 | 0 | 0 | 1.5-6.7
+South Africa | 1517 | 1504 | 0 | 4 | 18 | 76 | 15 | 0 | 0 | 0 | 0 | 0 | 1.8-6.5
+Ghana | 1510 | 1501 | 0 | 1 | 15 | 82 | 8 | 0 | 0 | 0 | 0 | 0 | 1.1-6.9
+Curazao | 1434 | 1427 | 0 | 0 | 13 | 85 | 6 | 0 | 0 | 0 | 0 | 0 | 0.9-7.1
+Qatar | 1421 | 1410 | 0 | 2 | 20 | 77 | 11 | 0 | 0 | 0 | 0 | 0 | 1.4-6.7
 
 ## Funcionamiento del modelo
 
@@ -101,6 +113,9 @@ y después el número de goles anotados.
 Si persistía el empate,
 se uso un número de suerte al azar.
 
+En la fase de 16vos,
+los ocho mejores terceros se distribuyeron al azar.
+
 En la fase eliminatoria,
 si luego del tiempo extra persistía el empate,
 se escogió a alguno de los dos equipos al azar.
@@ -111,6 +126,7 @@ usando el procedimiento para
 [calcular el número de puntos cambiados](https://en.wikipedia.org/wiki/World_Football_Elo_Ratings#Calculation_principles).
 Dado que es la copa del mundo,
 el factor de peso del partido fue de 60.
+Los partidos que llegaron a tiempo extra se consideran un empate.
 
 ## Ejecutar la simulación
 
@@ -120,60 +136,56 @@ usando la instrucción
 pero dado el uso poco seguido,
 no vale la pena!):
 
-~~~bash
-go run catar-2022.go
-~~~~
+```bash
+go run wc-2026.go
+```
 
 Con el parámetro `--sims` es posible indicar el número de simulaciones,
 y con `--fmt` se puede indicar que produzca una tabla en `markdown`
 usando `md`.
+Con el parámetro `—-verbose` se pueden ver los resultados de cada simulación.
 
 También es posible ejecutar la simulación de un solo partido
+(con el ELO de antes de arrancar el mundial)
 usando el código en `partido`.
 Por ejemplo para simular Argentina vs. Brasil:
 
-~~~bash
-go run partido.go "Argentina" "Brasil"
-~~~
+```bash
+go run partido.go "Argentina" "Brazil"
+```
 
 Es posible estimar la probabilidad sabiendo el marcador
 en un minuto determinado
 (los minutos de cuentan hacía adelante desde 0 hasta 90,
 o si hay tiempos suplementarios hasta 120):
 
-~~~bash
-go run partido.go -min 69 "Bélgica" "Brasil" "1-2"
-~~~
+```bash
+go run partido.go -min 69 "Belgium" "Brazil" "1-2"
+```
 
 Con la bandera `--sup` los empates se resuelven
 con tiempo suplementario.
 
-Como esta aplicación puede ser muy interesante
-para ejecutar en un partido,
-un código muy similar esta en el
-[playground de go](https://go.dev/play/p/hEBq_4m3TuA).
-
 ## Interpretación
 
-En el mundial pasado mucha gente bromeo
-que podría tomar los resultados para apostar.
-Yo diría que esto es de poca ayuda para las apuestas:
-Los resultados son una expectativa basada en dos presupuestos
-que no se cumplen en realidad:
+En los mundiales anteriores,
+algunas personas bromearon que se podía usar el código para apostar.
+Yo diría que el programa es de poca ayuda en las apuestas:
+los resultados son expectativas basadas en un modelo que,
+aunque esperamos que se parezca a la realidad,
+tiene varios presupuestos falsos o dudosos:
 
-* La simulación muestra el resultado de *el modelo*,
-  que esperamos que se aproxime a la realidad.
-* El torneo se juega muchas veces.
-  El torneo real es solo un posible resultado
-  de todos los resultados posibles.
-  La simulación pretende aproximar todas esas posibles historias.
+- No tiene en cuenta el poder ofensivo y defensivo de los equipos.
+- Asume que la expectativa de goles es complementaria,
+  por lo que la suma de la expectativa de goles de ambos equipos es siempre 2.6.
+- El calendario de partidos es inexacto,
+  en 16vos no se asignan los partidos de los mejores terceros al azar,
+  en vez de usando las combinaciones definidas por el reglamento del torneo.
 
-Aún si asumimos que el modelo es exacto,
-la simulación ayudaría a que *en promedio*
-a los apostadores les fuera mejor
-que escogiendo resultados totalmente al azar.
-Lo cual no implica que *en promedio*
-esos apostadoran ganaran más de lo que perdieron.
+Aun si asumimos que el modelo es exacto,
+la simulación ayudaría a que en una población de muchos apostadores que usa el modelo,
+en promedio,
+les fuera mejor que a una población de muchos apostadores que escogen los resultados al azar.
 
 En general,
 los sistemas de apuestas funcionan
