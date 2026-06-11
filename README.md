@@ -62,6 +62,8 @@ Ghana | 1510 | 1501 | 0 | 1 | 15 | 82 | 8 | 0 | 0 | 0 | 0 | 0 | 1.1-6.9
 Curazao | 1434 | 1427 | 0 | 0 | 13 | 85 | 6 | 0 | 0 | 0 | 0 | 0 | 0.9-7.1
 Qatar | 1421 | 1410 | 0 | 2 | 20 | 77 | 11 | 0 | 0 | 0 | 0 | 0 | 1.4-6.7
 
+Los resultados de los partidos individuales están disponibles en [resultados.md](blob/resultados.md).
+
 ## Funcionamiento del modelo
 
 El modelo esta basado en los indices de ELO
