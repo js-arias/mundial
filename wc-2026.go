@@ -11,6 +11,7 @@ import (
 	"fmt"
 	"math"
 	"math/rand/v2"
+	"os"
 	"slices"
 
 	"gonum.org/v1/gonum/stat/distuv"
@@ -207,6 +208,21 @@ type contador struct {
 	elo int
 }
 
+func (c *contador) round(sims int) {
+	c.p1 = int(math.Round(float64(c.p1*100) / float64(sims)))
+	c.p2 = int(math.Round(float64(c.p2*100) / float64(sims)))
+	c.p3 = int(math.Round(float64(c.p3*100) / float64(sims)))
+	c.p4 = int(math.Round(float64(c.p4*100) / float64(sims)))
+	c.f16 = int(math.Round(float64(c.f16*100) / float64(sims)))
+	c.oct = int(math.Round(float64(c.oct*100) / float64(sims)))
+	c.crt = int(math.Round(float64(c.crt*100) / float64(sims)))
+	c.sf = int(math.Round(float64(c.sf*100) / float64(sims)))
+	c.f = int(math.Round(float64(c.f*100) / float64(sims)))
+	c.camp = int(math.Round(float64(c.camp*100) / float64(sims)))
+
+	c.elo = int(math.Round(float64(c.elo) / float64(sims)))
+}
+
 var resultados map[string]*contador
 
 type grupoPos struct {
@@ -349,24 +365,41 @@ func grupoA() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "Mexico",
+			puntos: 3,
+			mas:    2,
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "South Africa",
+			menos:  2,
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "South Korea",
+			puntos: 3,
+			mas:    2,
+			menos:  1,
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Czech Republic",
+			mas:    1,
+			menos:  2,
+			suerte: rand.Float64(),
 		},
 	}
-	elo["Mexico"] = 1875
-	elo["South Africa"] = 1517
-	elo["South Korea"] = 1758
-	elo["Czech Republic"] = 1740
+	// elo["Mexico"] = 1875
+	// elo["South Africa"] = 1517
+	// elo["South Korea"] = 1758
+	// elo["Czech Republic"] = 1740
 
-	partidoDeGrupo("A", pos[0], pos[1]) // Mexico vs South Africa
-	partidoDeGrupo("A", pos[2], pos[3]) // South Korea vs Czech Republic
+	elo["Mexico"] = 1881
+	elo["South Africa"] = 1511
+	elo["South Korea"] = 1786
+	elo["Czech Republic"] = 1712
+
+	// partidoDeGrupo("A", pos[0], pos[1]) // Mexico vs South Africa
+	// partidoDeGrupo("A", pos[2], pos[3]) // South Korea vs Czech Republic
 	partidoDeGrupo("A", pos[0], pos[2]) // Mexico vs South Korea
 	partidoDeGrupo("A", pos[1], pos[3]) // South Africa vs Czech Republic
 	partidoDeGrupo("A", pos[0], pos[3]) // Mexico vs Czech Republic
@@ -382,23 +415,36 @@ func grupoB() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "Canada",
+			puntos: 1,
+			mas:    1,
+			menos:  1,
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Bosnia and Herzegovina",
+			puntos: 1,
+			mas:    1,
+			menos:  1,
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Qatar",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Switzerland",
+			suerte: rand.Float64(),
 		},
 	}
-	elo["Canada"] = 1788
-	elo["Bosnia and Herzegovina"] = 1595
+	// elo["Canada"] = 1788
+	// elo["Bosnia and Herzegovina"] = 1595
 	elo["Qatar"] = 1421
 	elo["Switzerland"] = 1891
 
-	partidoDeGrupo("B", pos[0], pos[1]) // Canada vs Bosnia and Herzegovina
+	elo["Canada"] = 1767
+	elo["Bosnia and Herzegovina"] = 1616
+
+	// partidoDeGrupo("B", pos[0], pos[1]) // Canada vs Bosnia and Herzegovina
 	partidoDeGrupo("B", pos[2], pos[3]) // Qatar vs Switzerland
 	partidoDeGrupo("B", pos[0], pos[2]) // Canada vs Qatar
 	partidoDeGrupo("B", pos[1], pos[3]) // Bosnia and Herzegovina vs Switzerland
@@ -415,15 +461,19 @@ func grupoC() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "Brazil",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Morocco",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Haiti",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Scotland",
+			suerte: rand.Float64(),
 		},
 	}
 	elo["Brazil"] = 1991
@@ -448,23 +498,35 @@ func grupoD() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "United States",
+			puntos: 3,
+			mas:    4,
+			menos:  1,
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Paraguay",
+			mas:    1,
+			menos:  4,
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Australia",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Turkey",
+			suerte: rand.Float64(),
 		},
 	}
-	elo["United States"] = 1726
-	elo["Paraguay"] = 1834
+	// elo["United States"] = 1726
+	// elo["Paraguay"] = 1834
 	elo["Australia"] = 1777
 	elo["Turkey"] = 1911
 
-	partidoDeGrupo("D", pos[0], pos[1]) // United States vs Paraguay
+	elo["United States"] = 1780
+	elo["Paraguay"] = 1780
+
+	// partidoDeGrupo("D", pos[0], pos[1]) // United States vs Paraguay
 	partidoDeGrupo("D", pos[2], pos[3]) // Australia vs Turkey
 	partidoDeGrupo("D", pos[0], pos[2]) // United States vs Australia
 	partidoDeGrupo("D", pos[1], pos[3]) // Paraguay vs Turkey
@@ -481,15 +543,19 @@ func grupoE() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "Germany",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Curazao",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Ivory Coast",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Ecuador",
+			suerte: rand.Float64(),
 		},
 	}
 	elo["Germany"] = 1932
@@ -514,15 +580,19 @@ func grupoF() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "Netherlands",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Japan",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Sweden",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Tunisia",
+			suerte: rand.Float64(),
 		},
 	}
 	elo["Netherlands"] = 1948
@@ -547,15 +617,19 @@ func grupoG() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "Belgium",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Egypt",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Iran",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "New Zealand",
+			suerte: rand.Float64(),
 		},
 	}
 	elo["Belgium"] = 1894
@@ -580,15 +654,19 @@ func grupoH() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "Spain",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Cape Verde",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Saudi Arabia",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Uruguay",
+			suerte: rand.Float64(),
 		},
 	}
 	elo["Spain"] = 2157
@@ -613,15 +691,19 @@ func grupoI() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "France",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Senegal",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Iraq",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Norway",
+			suerte: rand.Float64(),
 		},
 	}
 	elo["France"] = 2063
@@ -646,15 +728,19 @@ func grupoJ() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "Argentina",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Algeria",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Austria",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Jordan",
+			suerte: rand.Float64(),
 		},
 	}
 	elo["Argentina"] = 2115
@@ -679,15 +765,19 @@ func grupoK() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "Portugal",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "DR Congo",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Uzbekistan",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Colombia",
+			suerte: rand.Float64(),
 		},
 	}
 	elo["Portugal"] = 1989
@@ -712,15 +802,19 @@ func grupoL() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "England",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Croatia",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Ghana",
+			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Panama",
+			suerte: rand.Float64(),
 		},
 	}
 	elo["England"] = 2024
@@ -884,8 +978,32 @@ func main() {
 		simulacion()
 	}
 
+	args := flag.Args()
+	if len(args) > 0 {
+		c, ok := resultados[args[0]]
+		if !ok {
+			fmt.Fprintf(os.Stderr, "equipo no encontrado: %q\n", args[0])
+			os.Exit(1)
+		}
+		fmt.Printf("%s\n", c.nombre)
+		fmt.Printf("ELO: %d -> %.3f\n", eloBase[c.nombre], float64(c.elo)/float64(simulaciones))
+		fmt.Printf("P1: %.6f\n", float64(c.p1)/float64(simulaciones))
+		fmt.Printf("P2: %.6f\n", float64(c.p2)/float64(simulaciones))
+		fmt.Printf("P3: %.6f\n", float64(c.p3)/float64(simulaciones))
+		fmt.Printf("P4: %.6f\n", float64(c.p4)/float64(simulaciones))
+		fmt.Printf("F16: %.6f\n", float64(c.f16)/float64(simulaciones))
+		fmt.Printf("OCV: %.6f\n", float64(c.oct)/float64(simulaciones))
+		fmt.Printf("CT: %.6f\n", float64(c.crt)/float64(simulaciones))
+		fmt.Printf("SF: %.6f\n", float64(c.sf)/float64(simulaciones))
+		fmt.Printf("F: %.6f\n", float64(c.f)/float64(simulaciones))
+		fmt.Printf("Camp: %.6f\n", float64(c.camp)/float64(simulaciones))
+		fmt.Printf("Goles: %.3f-%.3f\n", float64(c.mas)/float64(simulaciones), float64(c.menos)/float64(simulaciones))
+		return
+	}
+
 	res := make([]*contador, 0, len(resultados))
 	for _, c := range resultados {
+		c.round(simulaciones)
 		res = append(res, c)
 	}
 	slices.SortFunc(res, func(a, b *contador) int {
@@ -937,16 +1055,14 @@ func main() {
 		return 1
 	})
 
-	sims := float64(simulaciones) / 100
-
 	if outFormat == "md" {
 		fmt.Printf("Equipo | ELO | ELO final | P1 | P2 | P3 | P4 | F16 | Ocv | Ct | Sf | Fin | Camp | Goles\n")
 		fmt.Printf("------ | --- | --------- | -- | -- | -- | -- | --- | --- | -- | -- | --- | ---- | -----\n")
 		for _, c := range res {
-			fmt.Printf("%s | %d | %d | ", c.nombre, eloBase[c.nombre], int((float64(c.elo))/float64(simulaciones)))
-			fmt.Printf("%d | %d | %d | %d | ", int(float64(c.p1)/sims), int(float64(c.p2)/sims), int(float64(c.p3)/sims), int(float64(c.p4)/sims))
-			fmt.Printf("%d | %d | %d | %d | %d | ", int(float64(c.f16)/sims), int(float64(c.oct)/sims), int(float64(c.crt)/sims), int(float64(c.sf)/sims), int(float64(c.f)/sims))
-			fmt.Printf("%d | ", int(float64(c.camp)/sims))
+			fmt.Printf("%s | %d | %d | ", c.nombre, eloBase[c.nombre], c.elo)
+			fmt.Printf("%d | %d | %d | %d | ", c.p1, c.p2, c.p3, c.p4)
+			fmt.Printf("%d | %d | %d | %d | %d | ", c.f16, c.oct, c.crt, c.sf, c.f)
+			fmt.Printf("%d | ", c.camp)
 			fmt.Printf("%.1f-%.1f\n", float64(c.mas)/float64(simulaciones), float64(c.menos)/float64(simulaciones))
 		}
 		return
@@ -954,10 +1070,10 @@ func main() {
 	fmt.Printf("# simulaciones %d\n", simulaciones)
 	fmt.Printf("Equipo\tELO -> ELO final\tP1 P2 P3 P4\t16 Oc Ct Sf F\tCamp\tGoles\n")
 	for _, c := range res {
-		fmt.Printf("%s\t%d -> %d\t", c.nombre, eloBase[c.nombre], int((float64(c.elo))/float64(simulaciones)))
-		fmt.Printf("%d %d %d %d\t", int(float64(c.p1)/sims), int(float64(c.p2)/sims), int(float64(c.p3)/sims), int(float64(c.p4)/sims))
-		fmt.Printf("%d %d %d %d %d\t", int(float64(c.f16)/sims), int(float64(c.oct)/sims), int(float64(c.crt)/sims), int(float64(c.sf)/sims), int(float64(c.f)/sims))
-		fmt.Printf("%d\t", int(float64(c.camp)/sims))
+		fmt.Printf("%s\t%d -> %d\t", c.nombre, eloBase[c.nombre], c.elo)
+		fmt.Printf("%d %d %d %d\t", c.p1, c.p2, c.p3, c.p4)
+		fmt.Printf("%d %d %d %d %d\t", c.f16, c.oct, c.crt, c.sf, c.f)
+		fmt.Printf("%d\t", c.camp)
 		fmt.Printf("%.1f-%.1f\n", float64(c.mas)/float64(simulaciones), float64(c.menos)/float64(simulaciones))
 	}
 }

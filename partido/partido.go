@@ -157,12 +157,14 @@ func main() {
 	var eloFlag bool
 	var tiempoSup bool
 	var frecFlag bool
+	var mdFlag bool
 	var minuto int
 	var simulaciones int
 	var veroRes string
 	flag.BoolVar(&eloFlag, "elo", false, "usa los valor de elo indicados")
 	flag.BoolVar(&tiempoSup, "sup", false, "usa tiempo suplementario para resolver empates")
 	flag.BoolVar(&frecFlag, "frec", false, "imprime la frecuencia de los resultados")
+	flag.BoolVar(&mdFlag, "md", false, "muestra los resultados como una tabla md")
 	flag.IntVar(&minuto, "min", 0, "tiempo de juego")
 	flag.IntVar(&simulaciones, "sims", 1_000_000, "simulaciones")
 	flag.StringVar(&veroRes, "vero", "", "verosimilitud de un resultado")
@@ -249,6 +251,10 @@ func main() {
 	}
 
 	frecs := make(map[string]float64)
+	matrix := make([][]int, 5)
+	for i := range matrix {
+		matrix[i] = make([]int, 5)
+	}
 	var v, e int
 	var mas, menos int
 
@@ -290,6 +296,13 @@ func main() {
 
 		marcador := fmt.Sprintf("%d-%d", g1, g2)
 		frecs[marcador]++
+		if g1 > 4 {
+			g1 = 4
+		}
+		if g2 > 4 {
+			g2 = 4
+		}
+		matrix[g1][g2]++
 	}
 
 	sims := float64(simulaciones)
@@ -304,9 +317,26 @@ func main() {
 	fmt.Printf("\tderrotas  = %.1f %%\n", (1-float64(v+e)/sims)*100)
 	fmt.Printf("\tgoles     = %.1f-%.1f\n", float64(mas)/sims, float64(menos)/sims)
 
-	if !frecFlag {
+	if !frecFlag && !mdFlag {
 		return
 	}
+	if mdFlag {
+		fmt.Printf("\n%s/%s | 0 | 1 | 2 | 3 | ≥ 4\n", args[0], args[1])
+		fmt.Printf("----- | - | - | - | - | ---\n")
+		for i := range matrix {
+			fmt.Printf("**")
+			if i > 3 {
+				fmt.Printf("≥ ")
+			}
+			fmt.Printf("%d**", i)
+			for _, v := range matrix[i] {
+				fmt.Printf(" | %d%%", int(math.Round(float64(v*100)/sims)))
+			}
+			fmt.Printf("\n")
+		}
+		return
+	}
+
 	marcadores := make([]string, 0, len(frecs))
 	for m := range frecs {
 		marcadores = append(marcadores, m)
