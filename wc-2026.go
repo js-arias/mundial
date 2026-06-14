@@ -429,23 +429,31 @@ func grupoB() []*grupoPos {
 		},
 		{
 			nombre: "Qatar",
+			puntos: 1,
+			mas:    1,
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Switzerland",
+			puntos: 1,
+			mas:    1,
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 	}
 	// elo["Canada"] = 1788
 	// elo["Bosnia and Herzegovina"] = 1595
-	elo["Qatar"] = 1421
-	elo["Switzerland"] = 1891
+	// elo["Qatar"] = 1421
+	// elo["Switzerland"] = 1891
 
 	elo["Canada"] = 1767
 	elo["Bosnia and Herzegovina"] = 1616
+	elo["Qatar"] = 1447
+	elo["Switzerland"] = 1865
 
 	// partidoDeGrupo("B", pos[0], pos[1]) // Canada vs Bosnia and Herzegovina
-	partidoDeGrupo("B", pos[2], pos[3]) // Qatar vs Switzerland
+	// partidoDeGrupo("B", pos[2], pos[3]) // Qatar vs Switzerland
 	partidoDeGrupo("B", pos[0], pos[2]) // Canada vs Qatar
 	partidoDeGrupo("B", pos[1], pos[3]) // Bosnia and Herzegovina vs Switzerland
 	partidoDeGrupo("B", pos[0], pos[3]) // Canada vs Switzerland
@@ -461,28 +469,42 @@ func grupoC() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "Brazil",
+			puntos: 1,
+			mas:    1,
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Morocco",
+			puntos: 1,
+			mas:    1,
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Haiti",
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Scotland",
+			puntos: 3,
+			mas:    1,
 			suerte: rand.Float64(),
 		},
 	}
-	elo["Brazil"] = 1991
-	elo["Morocco"] = 1827
-	elo["Haiti"] = 1548
-	elo["Scotland"] = 1782
+	// elo["Brazil"] = 1991
+	// elo["Morocco"] = 1827
+	// elo["Haiti"] = 1548
+	// elo["Scotland"] = 1782
 
-	partidoDeGrupo("C", pos[0], pos[1]) // Brazil vs Morocco
-	partidoDeGrupo("C", pos[2], pos[3]) // Haiti vs Scotland
+	elo["Brazil"] = 1978
+	elo["Morocco"] = 1840
+	elo["Haiti"] = 1536
+	elo["Scotland"] = 1794
+
+	// partidoDeGrupo("C", pos[0], pos[1]) // Brazil vs Morocco
+	// partidoDeGrupo("C", pos[2], pos[3]) // Haiti vs Scotland
 	partidoDeGrupo("C", pos[0], pos[2]) // Brazil vs Haiti
 	partidoDeGrupo("C", pos[1], pos[3]) // Morocco vs Scotland
 	partidoDeGrupo("C", pos[0], pos[3]) // Brazil vs Scotland
@@ -511,23 +533,28 @@ func grupoD() []*grupoPos {
 		},
 		{
 			nombre: "Australia",
+			puntos: 3,
+			mas:    2,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Turkey",
+			menos:  2,
 			suerte: rand.Float64(),
 		},
 	}
 	// elo["United States"] = 1726
 	// elo["Paraguay"] = 1834
-	elo["Australia"] = 1777
-	elo["Turkey"] = 1911
+	// elo["Australia"] = 1777
+	// elo["Turkey"] = 1911
 
 	elo["United States"] = 1780
 	elo["Paraguay"] = 1780
+	elo["Australia"] = 1839
+	elo["Turkey"] = 1849
 
 	// partidoDeGrupo("D", pos[0], pos[1]) // United States vs Paraguay
-	partidoDeGrupo("D", pos[2], pos[3]) // Australia vs Turkey
+	// partidoDeGrupo("D", pos[2], pos[3]) // Australia vs Turkey
 	partidoDeGrupo("D", pos[0], pos[2]) // United States vs Australia
 	partidoDeGrupo("D", pos[1], pos[3]) // Paraguay vs Turkey
 	partidoDeGrupo("D", pos[0], pos[3]) // United States vs Turkey
