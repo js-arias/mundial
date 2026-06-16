@@ -673,28 +673,45 @@ func grupoG() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "Belgium",
+			puntos: 1,
+			mas:    1,
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Egypt",
+			puntos: 1,
+			mas:    1,
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Iran",
+			puntos: 1,
+			mas:    2,
+			menos:  2,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "New Zealand",
+			puntos: 1,
+			mas:    2,
+			menos:  2,
 			suerte: rand.Float64(),
 		},
 	}
-	elo["Belgium"] = 1894
-	elo["Egypt"] = 1696
-	elo["Iran"] = 1772
-	elo["New Zealand"] = 1562
+	// elo["Belgium"] = 1894
+	// elo["Egypt"] = 1696
+	// elo["Iran"] = 1772
+	// elo["New Zealand"] = 1562
 
-	partidoDeGrupo("G", pos[0], pos[1]) // Belgium vs Egypt
-	partidoDeGrupo("G", pos[2], pos[3]) // Iran vs New Zealand
+	elo["Belgium"] = 1879
+	elo["Egypt"] = 1711
+	elo["Iran"] = 1756
+	elo["New Zealand"] = 1578
+
+	// partidoDeGrupo("G", pos[0], pos[1]) // Belgium vs Egypt
+	// partidoDeGrupo("G", pos[2], pos[3]) // Iran vs New Zealand
 	partidoDeGrupo("G", pos[0], pos[2]) // Belgium vs Iran
 	partidoDeGrupo("G", pos[1], pos[3]) // Egypt vs New Zealand
 	partidoDeGrupo("G", pos[0], pos[3]) // Belgium vs New Zealand
@@ -710,28 +727,41 @@ func grupoH() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "Spain",
+			puntos: 1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Cape Verde",
+			puntos: 1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Saudi Arabia",
+			puntos: 1,
+			mas:    1,
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Uruguay",
+			puntos: 1,
+			mas:    1,
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 	}
-	elo["Spain"] = 2157
-	elo["Cape Verde"] = 1578
-	elo["Saudi Arabia"] = 1576
-	elo["Uruguay"] = 1892
+	// elo["Spain"] = 2157
+	// elo["Cape Verde"] = 1578
+	// elo["Saudi Arabia"] = 1576
+	// elo["Uruguay"] = 1892
 
-	partidoDeGrupo("H", pos[0], pos[1]) // Spain vs Cape Verde
-	partidoDeGrupo("H", pos[2], pos[3]) // Saudi Arabia vs Uruguay
+	elo["Spain"] = 2129
+	elo["Cape Verde"] = 1606
+	elo["Saudi Arabia"] = 1598
+	elo["Uruguay"] = 1870
+
+	// partidoDeGrupo("H", pos[0], pos[1]) // Spain vs Cape Verde
+	// partidoDeGrupo("H", pos[2], pos[3]) // Saudi Arabia vs Uruguay
 	partidoDeGrupo("H", pos[0], pos[2]) // Spain vs Saudi Arabia
 	partidoDeGrupo("H", pos[1], pos[3]) // Cape Verde vs Uruguay
 	partidoDeGrupo("H", pos[0], pos[3]) // Spain vs Uruguay
