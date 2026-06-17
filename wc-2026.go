@@ -777,28 +777,43 @@ func grupoI() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "France",
+			puntos: 3,
+			mas:    3,
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Senegal",
+			mas:    1,
+			menos:  3,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Iraq",
 			suerte: rand.Float64(),
+			mas:    1,
+			menos:  4,
 		},
 		{
 			nombre: "Norway",
+			puntos: 3,
+			mas:    4,
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 	}
-	elo["France"] = 2063
-	elo["Senegal"] = 1860
-	elo["Iraq"] = 1607
-	elo["Norway"] = 1914
+	// elo["France"] = 2063
+	// elo["Senegal"] = 1860
+	// elo["Iraq"] = 1607
+	// elo["Norway"] = 1914
 
-	partidoDeGrupo("I", pos[0], pos[1]) // France vs Senegal
-	partidoDeGrupo("I", pos[2], pos[3]) // Iraq vs Norway
+	elo["France"] = 2084
+	elo["Senegal"] = 1839
+	elo["Iraq"] = 1592
+	elo["Norway"] = 1929
+
+	// partidoDeGrupo("I", pos[0], pos[1]) // France vs Senegal
+	// partidoDeGrupo("I", pos[2], pos[3]) // Iraq vs Norway
 	partidoDeGrupo("I", pos[0], pos[2]) // France vs Iraq
 	partidoDeGrupo("I", pos[1], pos[3]) // Senegal vs Norway
 	partidoDeGrupo("I", pos[0], pos[3]) // France vs Norway
@@ -814,28 +829,41 @@ func grupoJ() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "Argentina",
+			puntos: 3,
+			mas:    3,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Algeria",
+			menos:  3,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Austria",
+			puntos: 3,
+			mas:    3,
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Jordan",
+			mas:    1,
+			menos:  3,
 			suerte: rand.Float64(),
 		},
 	}
-	elo["Argentina"] = 2115
-	elo["Algeria"] = 1772
-	elo["Austria"] = 1830
-	elo["Jordan"] = 1680
+	// elo["Argentina"] = 2115
+	// elo["Algeria"] = 1772
+	// elo["Austria"] = 1830
+	// elo["Jordan"] = 1680
 
-	partidoDeGrupo("J", pos[0], pos[1]) // Argentina vs Algeria
-	partidoDeGrupo("J", pos[2], pos[3]) // Austria vs Jordan
+	elo["Argentina"] = 2128
+	elo["Algeria"] = 1759
+	elo["Austria"] = 1857
+	elo["Jordan"] = 1653
+
+	// partidoDeGrupo("J", pos[0], pos[1]) // Argentina vs Algeria
+	// partidoDeGrupo("J", pos[2], pos[3]) // Austria vs Jordan
 	partidoDeGrupo("J", pos[0], pos[2]) // Argentina vs Austria
 	partidoDeGrupo("J", pos[1], pos[3]) // Algeria vs Jordan
 	partidoDeGrupo("J", pos[0], pos[3]) // Argentina vs Jordan
