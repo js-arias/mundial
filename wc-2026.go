@@ -879,28 +879,44 @@ func grupoK() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "Portugal",
+			puntos: 1,
+			mas:    1,
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "DR Congo",
+			puntos: 1,
+			mas:    1,
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Uzbekistan",
+			mas:    1,
+			menos:  3,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Colombia",
+			puntos: 3,
+			mas:    3,
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 	}
-	elo["Portugal"] = 1989
-	elo["DR Congo"] = 1652
-	elo["Uzbekistan"] = 1714
-	elo["Colombia"] = 1982
+	// elo["Portugal"] = 1989
+	// elo["DR Congo"] = 1652
+	// elo["Uzbekistan"] = 1714
+	// elo["Colombia"] = 1982
 
-	partidoDeGrupo("K", pos[0], pos[1]) // Portugal vs DR Congo
-	partidoDeGrupo("K", pos[2], pos[3]) // Uzbekistan vs Colombia
+	elo["Portugal"] = 1967
+	elo["DR Congo"] = 1674
+	elo["Uzbekistan"] = 1698
+	elo["Colombia"] = 1998
+
+	// partidoDeGrupo("K", pos[0], pos[1]) // Portugal vs DR Congo
+	// partidoDeGrupo("K", pos[2], pos[3]) // Uzbekistan vs Colombia
 	partidoDeGrupo("K", pos[0], pos[2]) // Portugal vs Uzbekistan
 	partidoDeGrupo("K", pos[1], pos[3]) // DR Congo vs Colombia
 	partidoDeGrupo("K", pos[0], pos[3]) // Portugal vs Colombia
@@ -916,28 +932,41 @@ func grupoL() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "England",
+			puntos: 3,
+			mas:    4,
+			menos:  2,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Croatia",
+			menos:  2,
+			mas:    4,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Ghana",
+			puntos: 3,
+			mas:    1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Panama",
+			menos:  1,
 			suerte: rand.Float64(),
 		},
 	}
-	elo["England"] = 2024
-	elo["Croatia"] = 1912
-	elo["Ghana"] = 1510
-	elo["Panama"] = 1730
+	// elo["England"] = 2024
+	// elo["Croatia"] = 1912
+	// elo["Ghana"] = 1510
+	// elo["Panama"] = 1730
 
-	partidoDeGrupo("L", pos[0], pos[1]) // England vs Croatia
-	partidoDeGrupo("L", pos[2], pos[3]) // Ghana vs Panama
+	elo["England"] = 2055
+	elo["Croatia"] = 1881
+	elo["Ghana"] = 1557
+	elo["Panama"] = 1683
+
+	// partidoDeGrupo("L", pos[0], pos[1]) // England vs Croatia
+	// partidoDeGrupo("L", pos[2], pos[3]) // Ghana vs Panama
 	partidoDeGrupo("L", pos[0], pos[2]) // England vs Ghana
 	partidoDeGrupo("L", pos[1], pos[3]) // Croatia vs Panama
 	partidoDeGrupo("L", pos[0], pos[3]) // England vs Panama

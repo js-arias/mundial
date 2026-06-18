@@ -18,6 +18,7 @@ import (
 )
 
 // ELO. Fuente: <https://www.eloratings.net/2026_World_Cup>.
+/*
 var elo = map[string]int{
 	"Algeria":                1772,
 	"Argentina":              2115,
@@ -67,6 +68,58 @@ var elo = map[string]int{
 	"United States":          1726,
 	"Uruguay":                1892,
 	"Uzbekistan":             1714,
+}
+*/
+
+var elo = map[string]int{
+	"Algeria":                1759,
+	"Argentina":              2128,
+	"Australia":              1839,
+	"Austria":                1857,
+	"Belgium":                1879,
+	"Bosnia and Herzegovina": 1616,
+	"Brazil":                 1978,
+	"Canada":                 1767,
+	"Cape Verde":             1606,
+	"Colombia":               1998,
+	"Croatia":                1881,
+	"Curazao":                1427,
+	"Czech Republic":         1712,
+	"DR Congo":               1674,
+	"Ecuador":                1890,
+	"Egypt":                  1711,
+	"England":                2055,
+	"France":                 2084,
+	"Germany":                1939,
+	"Ghana":                  1557,
+	"Haiti":                  1536,
+	"Iran":                   1756,
+	"Iraq":                   1592,
+	"Ivory Coast":            1743,
+	"Japan":                  1910,
+	"Jordan":                 1653,
+	"Mexico":                 1881,
+	"Morocco":                1840,
+	"Netherlands":            1944,
+	"New Zealand":            1578,
+	"Norway":                 1929,
+	"Panama":                 1683,
+	"Paraguay":               1780,
+	"Portugal":               1967,
+	"Qatar":                  1447,
+	"Saudi Arabia":           1598,
+	"Scotland":               1794,
+	"Senegal":                1839,
+	"South Africa":           1511,
+	"South Korea":            1786,
+	"Spain":                  2129,
+	"Sweden":                 1755,
+	"Switzerland":            1865,
+	"Tunisia":                1585,
+	"Turkey":                 1849,
+	"United States":          1780,
+	"Uruguay":                1870,
+	"Uzbekistan":             1698,
 }
 
 // Probabilidad de victoria
