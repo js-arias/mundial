@@ -514,10 +514,12 @@ func grupoC() []*grupoPos {
 	partidoDeGrupo("C", pos[0], pos[3]) // Brazil vs Scotland
 	partidoDeGrupo("C", pos[1], pos[2]) // Morocco vs Haiti
 
-	ordenarGrupo(pos)
-	resultadosGrupo(pos)
+	xpos := []*grupoPos{pos[0], pos[1], pos[3]}
+	ordenarGrupo(xpos)
+	xpos = append(xpos, pos[2])
+	resultadosGrupo(xpos)
 
-	return pos
+	return xpos
 }
 
 func grupoD() []*grupoPos {
@@ -566,10 +568,12 @@ func grupoD() []*grupoPos {
 	partidoDeGrupo("D", pos[0], pos[3]) // United States vs Turkey
 	partidoDeGrupo("D", pos[1], pos[2]) // Paraguay vs Australia
 
-	ordenarGrupo(pos)
-	resultadosGrupo(pos)
+	xpos := []*grupoPos{pos[0], pos[1], pos[2]}
+	ordenarGrupo(xpos)
+	xpos = append(xpos, pos[3])
+	resultadosGrupo(xpos)
 
-	return pos
+	return xpos
 }
 
 func grupoE() []*grupoPos {
@@ -893,29 +897,29 @@ func grupoK() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "Portugal",
-			puntos: 1,
-			mas:    1,
-			menos:  1,
+			puntos: 1 + 3,
+			mas:    1 + 5,
+			menos:  1 + 0,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "DR Congo",
-			puntos: 1,
-			mas:    1,
-			menos:  1,
+			puntos: 1 + 0,
+			mas:    1 + 0,
+			menos:  1 + 1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Uzbekistan",
-			mas:    1,
-			menos:  3,
+			mas:    1 + 0,
+			menos:  3 + 5,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Colombia",
-			puntos: 3,
-			mas:    3,
-			menos:  1,
+			puntos: 3 + 3,
+			mas:    3 + 1,
+			menos:  1 + 0,
 			suerte: rand.Float64(),
 		},
 	}
@@ -924,15 +928,15 @@ func grupoK() []*grupoPos {
 	// elo["Uzbekistan"] = 1714
 	// elo["Colombia"] = 1982
 
-	elo["Portugal"] = 1967
-	elo["DR Congo"] = 1674
-	elo["Uzbekistan"] = 1698
-	elo["Colombia"] = 1998
+	elo["Portugal"] = 1988
+	elo["DR Congo"] = 1666
+	elo["Uzbekistan"] = 1677
+	elo["Colombia"] = 2006
 
 	// partidoDeGrupo("K", pos[0], pos[1]) // Portugal vs DR Congo
 	// partidoDeGrupo("K", pos[2], pos[3]) // Uzbekistan vs Colombia
-	partidoDeGrupo("K", pos[0], pos[2]) // Portugal vs Uzbekistan
-	partidoDeGrupo("K", pos[1], pos[3]) // DR Congo vs Colombia
+	// partidoDeGrupo("K", pos[0], pos[2]) // Portugal vs Uzbekistan
+	// partidoDeGrupo("K", pos[1], pos[3]) // DR Congo vs Colombia
 	partidoDeGrupo("K", pos[0], pos[3]) // Portugal vs Colombia
 	partidoDeGrupo("K", pos[1], pos[2]) // DR Congo vs Uzbekistan
 
@@ -946,26 +950,28 @@ func grupoL() []*grupoPos {
 	pos := []*grupoPos{
 		{
 			nombre: "England",
-			puntos: 3,
-			mas:    4,
-			menos:  2,
+			puntos: 3 + 1,
+			mas:    4 + 0,
+			menos:  2 + 0,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Croatia",
-			menos:  2,
-			mas:    4,
+			puntos: 0 + 3,
+			menos:  2 + 0,
+			mas:    4 + 1,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Ghana",
-			puntos: 3,
-			mas:    1,
+			puntos: 3 + 1,
+			mas:    1 + 0,
+			menos:  0 + 0,
 			suerte: rand.Float64(),
 		},
 		{
 			nombre: "Panama",
-			menos:  1,
+			menos:  1 + 1,
 			suerte: rand.Float64(),
 		},
 	}
@@ -974,15 +980,15 @@ func grupoL() []*grupoPos {
 	// elo["Ghana"] = 1510
 	// elo["Panama"] = 1730
 
-	elo["England"] = 2055
-	elo["Croatia"] = 1881
-	elo["Ghana"] = 1557
-	elo["Panama"] = 1683
+	elo["England"] = 2028
+	elo["Croatia"] = 1896
+	elo["Ghana"] = 1584
+	elo["Panama"] = 1668
 
 	// partidoDeGrupo("L", pos[0], pos[1]) // England vs Croatia
 	// partidoDeGrupo("L", pos[2], pos[3]) // Ghana vs Panama
-	partidoDeGrupo("L", pos[0], pos[2]) // England vs Ghana
-	partidoDeGrupo("L", pos[1], pos[3]) // Croatia vs Panama
+	// partidoDeGrupo("L", pos[0], pos[2]) // England vs Ghana
+	// partidoDeGrupo("L", pos[1], pos[3]) // Croatia vs Panama
 	partidoDeGrupo("L", pos[0], pos[3]) // England vs Panama
 	partidoDeGrupo("L", pos[1], pos[2]) // Croatia vs Ghana
 
