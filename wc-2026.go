@@ -256,7 +256,7 @@ func partidoDeGrupo(grupo string, p1, p2 *grupoPos) {
 
 	pts := cambioDePuntos(p1.nombre, p2.nombre, g1, g2)
 	elo[p1.nombre] += pts
-	elo[p2.nombre] -= pts
+	elo[p2.nombre] += -pts
 
 	if verbose {
 		fmt.Printf("%s: %s %d - %s %d\n", grupo, p1.nombre, g1, p2.nombre, g2)
@@ -272,7 +272,7 @@ func partidoEliminatorio(fase, e1, e2 string) string {
 	// tiempo extra es un empate
 	pts := cambioDePuntos(e1, e2, g1, g2)
 	elo[e1] += pts
-	elo[e2] -= pts
+	elo[e2] += -pts
 
 	ext := ""
 	if g1 == g2 {
@@ -283,8 +283,8 @@ func partidoEliminatorio(fase, e1, e2 string) string {
 	}
 	c1.mas += g1
 	c1.menos += g2
-	c2.mas += g1
-	c2.menos += g2
+	c2.mas += g2
+	c2.menos += g1
 
 	if verbose {
 		fmt.Printf("%s: %s %d - %s %d %s\n", fase, e1, g1, e2, g2, ext)
@@ -299,6 +299,38 @@ func partidoEliminatorio(fase, e1, e2 string) string {
 
 	// Penales: una moneda al aire
 	if rand.Float64() < 0.5 {
+		return e1
+	}
+	return e2
+}
+
+func partidoOficial(fase, e1, e2 string, g1, g2, pk int) string {
+	c1 := resultados[e1]
+	c2 := resultados[e2]
+
+	// tiempo extra es un empate
+	pts := cambioDePuntos(e1, e2, g1, g2)
+	elo[e1] += pts
+	elo[e2] -= pts
+
+	c1.mas += g1
+	c1.menos += g2
+	c2.mas += g2
+	c2.menos += g1
+
+	if verbose {
+		fmt.Printf("%s: %s %d - %s %d\n", fase, e1, g1, e2, g2)
+	}
+
+	if g1 > g2 {
+		return e1
+	}
+	if g2 > g1 {
+		return e2
+	}
+
+	// partido definido por penales
+	if pk == 0 {
 		return e1
 	}
 	return e2
@@ -1060,22 +1092,39 @@ func simulacion() {
 	*/
 
 	// 16vos de final
-	m74 := partidoEliminatorio("16", gE[0].nombre, terceros[6].nombre)
-	m77 := partidoEliminatorio("16", gI[0].nombre, terceros[1].nombre)
-	m73 := partidoEliminatorio("16", gA[1].nombre, gB[1].nombre)
-	m75 := partidoEliminatorio("16", gF[0].nombre, gC[1].nombre)
-	m83 := partidoEliminatorio("16", gK[1].nombre, gL[1].nombre)
-	m84 := partidoEliminatorio("16", gH[0].nombre, gJ[1].nombre)
-	m81 := partidoEliminatorio("16", gD[0].nombre, terceros[4].nombre)
-	m82 := partidoEliminatorio("16", gG[0].nombre, terceros[7].nombre)
-	m76 := partidoEliminatorio("16", gC[0].nombre, gF[1].nombre)
-	m78 := partidoEliminatorio("16", gE[1].nombre, gI[1].nombre)
-	m79 := partidoEliminatorio("16", gA[0].nombre, terceros[3].nombre)
-	m80 := partidoEliminatorio("16", gL[0].nombre, terceros[0].nombre)
-	m86 := partidoEliminatorio("16", gJ[0].nombre, gH[1].nombre)
-	m88 := partidoEliminatorio("16", gD[1].nombre, gG[1].nombre)
-	m85 := partidoEliminatorio("16", gB[0].nombre, terceros[5].nombre)
-	m87 := partidoEliminatorio("16", gK[0].nombre, terceros[2].nombre)
+	// m74 := partidoEliminatorio("16", gE[0].nombre, terceros[6].nombre)
+	// m77 := partidoEliminatorio("16", gI[0].nombre, terceros[1].nombre)
+	// m73 := partidoEliminatorio("16", gA[1].nombre, gB[1].nombre)
+	// m75 := partidoEliminatorio("16", gF[0].nombre, gC[1].nombre)
+	// m83 := partidoEliminatorio("16", gK[1].nombre, gL[1].nombre)
+	// m84 := partidoEliminatorio("16", gH[0].nombre, gJ[1].nombre)
+	// m81 := partidoEliminatorio("16", gD[0].nombre, terceros[4].nombre)
+	// m82 := partidoEliminatorio("16", gG[0].nombre, terceros[7].nombre)
+	// m76 := partidoEliminatorio("16", gC[0].nombre, gF[1].nombre)
+	// m78 := partidoEliminatorio("16", gE[1].nombre, gI[1].nombre)
+	// m79 := partidoEliminatorio("16", gA[0].nombre, terceros[3].nombre)
+	// m80 := partidoEliminatorio("16", gL[0].nombre, terceros[0].nombre)
+	// m86 := partidoEliminatorio("16", gJ[0].nombre, gH[1].nombre)
+	// m88 := partidoEliminatorio("16", gD[1].nombre, gG[1].nombre)
+	// m85 := partidoEliminatorio("16", gB[0].nombre, terceros[5].nombre)
+	// m87 := partidoEliminatorio("16", gK[0].nombre, terceros[2].nombre)
+
+	m73 := partidoOficial("16", "South Africa", "Canada", 0, 1, -1)
+	m74 := partidoOficial("16", "Germany", "Paraguay", 1, 1, 1)
+	m75 := partidoOficial("16", "Netherlands", "Morocco", 1, 1, 1)
+	m76 := partidoOficial("16", "Brazil", "Japan", 2, 1, -1)
+	m77 := partidoOficial("16", "France", "Sweden", 3, 0, -1)
+	m78 := partidoOficial("16", "Ivory Coast", "Norway", 1, 2, -1)
+	m79 := partidoOficial("16", "Mexico", "Ecuador", 2, 0, -1)
+	m80 := partidoOficial("16", "England", "DR Congo", 2, 1, -1)
+	m81 := partidoOficial("16", "United States", "Bosnia and Herzegovina", 2, 0, -1)
+	m82 := partidoOficial("16", "Belgium", "Senegal", 3, 2, -1)
+	m83 := partidoOficial("16", "Portugal", "Croatia", 2, 1, -1)
+	m84 := partidoOficial("16", "Spain", "Austria", 3, 0, -1)
+	m85 := partidoOficial("16", "Switzerland", "Algeria", 2, 0, -1)
+	m86 := partidoOficial("16", "Argentina", "Cape Verde", 3, 2, -1)
+	m87 := partidoOficial("16", "Colombia", "Ghana", 1, 0, -1)
+	m88 := partidoOficial("16", "Australia", "Egypt", 1, 1, 2)
 
 	resultados[m73].oct++
 	resultados[m74].oct++
@@ -1226,12 +1275,26 @@ func main() {
 			}
 			return 1
 		}
+
+		if a.p1 != b.p1 {
+			if a.p1 > b.p1 {
+				return -1
+			}
+			return 1
+		}
+		if a.p2 != b.p2 {
+			if a.p2 > b.p2 {
+				return -1
+			}
+			return 1
+		}
 		if a.p3 != b.p3 {
 			if a.p3 > b.p3 {
 				return -1
 			}
 			return 1
 		}
+
 		if eloBase[a.nombre] > eloBase[b.nombre] {
 			return -1
 		}
