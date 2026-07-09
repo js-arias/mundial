@@ -1144,14 +1144,23 @@ func simulacion() {
 	resultados[m88].oct++
 
 	// octavos
-	m89 := partidoEliminatorio("8v", m74, m77)
-	m90 := partidoEliminatorio("8v", m73, m75)
-	m93 := partidoEliminatorio("8v", m83, m84)
-	m94 := partidoEliminatorio("8v", m81, m82)
-	m91 := partidoEliminatorio("8v", m76, m78)
-	m92 := partidoEliminatorio("8v", m79, m80)
-	m95 := partidoEliminatorio("8v", m86, m88)
-	m96 := partidoEliminatorio("8v", m85, m87)
+	// m89 := partidoEliminatorio("8v", m74, m77)
+	// m90 := partidoEliminatorio("8v", m73, m75)
+	// m93 := partidoEliminatorio("8v", m83, m84)
+	// m94 := partidoEliminatorio("8v", m81, m82)
+	// m91 := partidoEliminatorio("8v", m76, m78)
+	// m92 := partidoEliminatorio("8v", m79, m80)
+	// m95 := partidoEliminatorio("8v", m86, m88)
+	// m96 := partidoEliminatorio("8v", m85, m87)
+
+	m89 := partidoOficial("8v", "Paraguay", "France", 0, 1, -1)
+	m90 := partidoOficial("8v", "Canada", "Morocco", 0, 3, -1)
+	m91 := partidoOficial("8v", "Brazil", "Norway", 1, 2, -1)
+	m92 := partidoOficial("8v", "Mexico", "England", 2, 3, -1)
+	m93 := partidoOficial("8v", "Portugal", "Spain", 0, 1, -1)
+	m94 := partidoOficial("8v", "United States", "Belgium", 1, 4, -1)
+	m95 := partidoOficial("8v", "Argentina", "Egypt", 3, 2, -1)
+	m96 := partidoOficial("8v", "Switzerland", "Colombia", 0, 0, 0)
 
 	resultados[m89].crt++
 	resultados[m90].crt++
