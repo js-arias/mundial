@@ -1172,10 +1172,15 @@ func simulacion() {
 	resultados[m96].crt++
 
 	// cuartos
-	m97 := partidoEliminatorio("4t", m89, m90)
-	m98 := partidoEliminatorio("4t", m93, m94)
-	m99 := partidoEliminatorio("4t", m91, m92)
-	m100 := partidoEliminatorio("4t", m95, m96)
+	// m97 := partidoEliminatorio("4t", m89, m90)
+	// m98 := partidoEliminatorio("4t", m93, m94)
+	// m99 := partidoEliminatorio("4t", m91, m92)
+	// m100 := partidoEliminatorio("4t", m95, m96)
+
+	m97 := partidoOficial("4t", "France", "Morocco", 2, 0, -1)
+	m98 := partidoOficial("4t", "Spain", "Belgium", 2, 1, -1)
+	m99 := partidoOficial("4t", "Norway", "England", 1, 2, -1)
+	m100 := partidoOficial("4t", "Argentina", "Switzerland", 3, 1, -1)
 
 	resultados[m97].sf++
 	resultados[m98].sf++
