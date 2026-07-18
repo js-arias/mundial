@@ -1188,8 +1188,11 @@ func simulacion() {
 	resultados[m100].sf++
 
 	// semi-finales
-	m101 := partidoEliminatorio("SF", m97, m98)
-	m102 := partidoEliminatorio("SF", m99, m100)
+	// m101 := partidoEliminatorio("SF", m97, m98)
+	// m102 := partidoEliminatorio("SF", m99, m100)
+
+	m101 := partidoOficial("SF", "France", "Spain", 0, 2, -1)
+	m102 := partidoOficial("SF", "England", "Argentina", 1, 2, -1)
 
 	resultados[m101].f++
 	resultados[m102].f++

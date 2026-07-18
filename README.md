@@ -1,7 +1,7 @@
 # Simulador del mundial
 
 Resultados para un millón de simulaciones
-(incluye resultados hasta el 11 de julio).
+(incluye resultados hasta el 15 de julio).
 ELO indica el ELO al arrancar el campeonato,
 y ELO final el ELO esperado al terminar.
 P1, P2, P3 y P4 indican la probabilidad
@@ -14,10 +14,10 @@ Los valores de las probabilidades están en porcentaje.
 
 Equipo | ELO | ELO final | P1 | P2 | P3 | P4 | F16 | Ocv | Ct | Sf | Fin | Camp | Goles
 ------ | --- | --------- | -- | -- | -- | -- | --- | --- | -- | -- | --- | ---- | -----
-Argentina | 2115 | 2180 | 100 | 0 | 0 | 0 | 100 | 100 | 100 | 100 | 66 | 32 | 19.6-8.0
-Spain | 2157 | 2193 | 100 | 0 | 0 | 0 | 100 | 100 | 100 | 100 | 55 | 32 | 13.4-3.0
-France | 2063 | 2162 | 100 | 0 | 0 | 0 | 100 | 100 | 100 | 100 | 45 | 24 | 18.0-4.1
-England | 2024 | 2086 | 100 | 0 | 0 | 0 | 100 | 100 | 100 | 100 | 34 | 12 | 14.5-8.3
+Spain | 2157 | 2233 | 100 | 0 | 0 | 0 | 100 | 100 | 100 | 100 | 100 | 55 | 14.5-2.3
+Argentina | 2115 | 2199 | 100 | 0 | 0 | 0 | 100 | 100 | 100 | 100 | 100 | 45 | 20.3-8.5
+France | 2063 | 2121 | 100 | 0 | 0 | 0 | 100 | 100 | 100 | 100 | 0 | 0 | 16.0-4.0
+England | 2024 | 2067 | 100 | 0 | 0 | 0 | 100 | 100 | 100 | 100 | 0 | 0 | 14.0-8.0
 Belgium | 1894 | 1934 | 100 | 0 | 0 | 0 | 100 | 100 | 100 | 0 | 0 | 0 | 14.0-7.0
 Switzerland | 1891 | 1928 | 100 | 0 | 0 | 0 | 100 | 100 | 100 | 0 | 0 | 0 | 10.0-6.0
 Norway | 1914 | 1950 | 0 | 100 | 0 | 0 | 100 | 100 | 100 | 0 | 0 | 0 | 13.0-11.0

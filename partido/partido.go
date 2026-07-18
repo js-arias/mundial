@@ -73,7 +73,7 @@ var elo = map[string]int{
 
 var elo = map[string]int{
 	"Algeria":                1756,
-	"Argentina":              2177,
+	"Argentina":              2200,
 	"Australia":              1795,
 	"Austria":                1821,
 	"Belgium":                1948,
@@ -88,8 +88,8 @@ var elo = map[string]int{
 	"DR Congo":               1704,
 	"Ecuador":                1871,
 	"Egypt":                  1742,
-	"England":                2097,
-	"France":                 2163,
+	"England":                2074,
+	"France":                 2121,
 	"Germany":                1908,
 	"Ghana":                  1570,
 	"Haiti":                  1517,
@@ -112,7 +112,7 @@ var elo = map[string]int{
 	"Senegal":                1816,
 	"South Africa":           1559,
 	"South Korea":            1723,
-	"Spain":                  2190,
+	"Spain":                  2232,
 	"Sweden":                 1731,
 	"Switzerland":            1928,
 	"Tunisia":                1562,
